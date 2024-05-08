@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YFa1ONUbsTY9KlCKq6RCIT5iB6kN6c9p0T5QqXSKS19wRB1ODUrYojkwmMtIxTSjvBxP+I690KoeqBixAp47Sg==",
+  "dgSpecHash": "nRBtU6f2v9ZH3MYZq1mj8ZwcsID6v9FZgkAriUnkZRMWRgjoaoErarFBlhVdHzWVMNlzxQbHk6CEsvKrSdBXdQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Javi\\source\\repos\\ApiTFG\\ApiTFG.csproj",
+  "projectFilePath": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular+.Net\\ApiTFG\\ApiTFG.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Javi\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Javi\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

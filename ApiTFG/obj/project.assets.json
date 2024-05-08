@@ -3243,11 +3243,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Javi\\source\\repos\\ApiTFG\\ApiTFG.csproj",
+      "projectUniqueName": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular+.Net\\ApiTFG\\ApiTFG.csproj",
       "projectName": "ApiTFG",
-      "projectPath": "C:\\Users\\Javi\\source\\repos\\ApiTFG\\ApiTFG.csproj",
+      "projectPath": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular+.Net\\ApiTFG\\ApiTFG.csproj",
       "packagesPath": "C:\\Users\\Javi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Javi\\source\\repos\\ApiTFG\\obj\\",
+      "outputPath": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular+.Net\\ApiTFG\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Javi\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ApiTFG.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
@@ -37,7 +37,11 @@ namespace ApiTFG.Controllers
             if (await _authService.Login(user))
             {
                 var tokenString = _authService.GenerateTokenString(user);
-                return Ok(tokenString);
+                return Ok(new LoginRequestResponse()
+                {
+                    Token = tokenString,
+                    Result = true,
+                });
             }
             return BadRequest();
         }
