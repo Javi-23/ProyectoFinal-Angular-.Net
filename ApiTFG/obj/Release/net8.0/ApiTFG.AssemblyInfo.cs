@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiTFG")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a5e2d63a54c9f6f96b037687056cad3227a15fe8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9cb4a869b3a1915db54b62b4c78db3e5db4e8105")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiTFG")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiTFG")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

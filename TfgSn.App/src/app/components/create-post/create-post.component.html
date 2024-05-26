@@ -1,0 +1,14 @@
+<div class="create-post-card">
+  <div class="post-content">
+    <h2>Crear Nueva Publicación</h2>
+    <form #postForm="ngForm" (ngSubmit)="createPost()">
+      <div class="form-group">
+        <textarea placeholder="Escribe tu publicación" name="postText" [(ngModel)]="text" required></textarea>
+      </div>
+      <div class="post-actions" align="end">
+        <button type="button" mat-button class="cancel-button" (click)="cancel()">Cancelar</button>
+        <button type="submit" class="action-button publish-button" [disabled]="postForm.invalid">Publicar</button>
+      </div>
+    </form>
+  </div>
+</div>

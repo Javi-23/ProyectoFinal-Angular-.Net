@@ -1,0 +1,11 @@
+<div class="dialog-card">
+  <div class="user-info">
+    <h2>{{ data.type }}</h2>
+    <div class="scrollable-users">
+      <div *ngFor="let user of data.users" class="user-item" >
+        <p (click)="navigateToOtherProfile(user.userName)">{{ user.userName }}</p>
+        <button *ngIf="isAuthenticated && data.type == 'Seguidos'" class="delete-button" (click)="unfollowUser(user)">Dejar de seguir</button>
+      </div>
+    </div>
+  </div>
+</div>

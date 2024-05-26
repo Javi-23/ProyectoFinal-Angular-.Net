@@ -1,0 +1,64 @@
+<div class="head" [ngClass]="getHeadClass()" *ngIf="path!=='' && path !== '/register'">
+    <div class="head-content">
+        <div class="head-content-left">
+            <div class="search-container" (click)="redirectUsersComponent()">
+                <div *ngIf="!CanShowSearchCanOverlay" class="normal-search">
+                    <input #termine class="search" type="search" name="" id="" placeholder="Buscar.." (keyup)="search(termine.value)">
+                    <i class="far fa-search search-icon" ></i>
+                </div>
+                <div>
+                    <div *ngIf="CanShowSearchCanOverlay">
+                        <button 
+                        [cdkMenuTriggerFor]="searchOverLay"
+                        class="search-menu-btn ripple"
+                        >
+                        <i class="far fa-search search-icon"></i>
+                        </button>
+                    </div>                
+                </div>
+            </div>
+        </div>
+        <div class="head-content-right">
+            <div class="head-menu">
+                <div class="head-menu-item">
+                    <button class="head-menu-item-btn ripple">
+                        <img [src]="'assets/flags/spain.jpg'" class="flag" alt="flag">
+                    </button>
+                </div>
+                <div class="head-menu-item">
+                    <button class="head-menu-item-btn ripple">
+                        <i class="far fa-comment-alt menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="head-user-avatar-container">
+                <div class="head-user-avatar" [cdkMenuTriggerFor]="userOverLay">
+                    <img [src]="profileImageUrl" alt="Foto de perfil" class="user-avatar">
+                    <div class="circle-indicator pulse"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #searchOverLay>
+    <div class="overlay overlay-search overlay-fall" cdkMenu>
+        <input #termine type="search" name="" id="" placeholder="Search..." (keyup)="search(termine.value)">
+        <button class="search-btn">
+            <i class="far fa-search search-icon"></i>
+        </button>
+    </div>
+</ng-template>
+
+<ng-template #userOverLay>
+    <div class="overlay overlay-user overlay-fall" cdkMenu>
+        <ul>
+            <li *ngFor="let item of userItems" cdkMenuItem (click)="handleMenuClick(item)">
+                <a [routerLink]="item.route">
+                    <i class="icon" [ngClass]="item.icon"></i>
+                    <span>{{item.label}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</ng-template>

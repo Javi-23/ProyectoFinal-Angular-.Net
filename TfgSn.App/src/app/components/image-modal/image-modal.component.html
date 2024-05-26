@@ -1,0 +1,8 @@
+<div class="modal-backdrop">
+  <div class="modal">
+    <h2>Subir Imagen de Perfil</h2>
+    <input type="file" (change)="onFileSelected($event)" />
+    <button (click)="onUpload()">Subir Imagen</button>
+    <button (click)="closeModal.emit()">Cerrar</button>
+  </div>
+</div>

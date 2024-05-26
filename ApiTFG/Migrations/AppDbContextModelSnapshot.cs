@@ -44,6 +44,9 @@ namespace ApiTFG.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("longblob");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("tinyint(1)");
 
@@ -106,7 +109,7 @@ namespace ApiTFG.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("UserName")
                         .IsRequired()
@@ -117,9 +120,35 @@ namespace ApiTFG.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId");
+
                     b.HasIndex("postsId");
 
                     b.ToTable("Comments");
+                });
+
+            modelBuilder.Entity("ApiTFG.Models.Likes", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("PostId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Likes");
                 });
 
             modelBuilder.Entity("ApiTFG.Models.Posts", b =>
@@ -129,12 +158,6 @@ namespace ApiTFG.Migrations
                         .HasColumnType("int");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<string>("AppUserId1")
-                        .HasColumnType("varchar(255)");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime(6)");
@@ -148,13 +171,11 @@ namespace ApiTFG.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AppUserId");
-
-                    b.HasIndex("AppUserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Posts");
                 });
@@ -318,22 +339,51 @@ namespace ApiTFG.Migrations
 
             modelBuilder.Entity("ApiTFG.Models.Comment", b =>
                 {
-                    b.HasOne("ApiTFG.Models.Posts", null)
+                    b.HasOne("ApiTFG.Models.AppUser", "User")
+                        .WithMany("UserComment")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ApiTFG.Models.Posts", "Post")
                         .WithMany("Comments")
                         .HasForeignKey("postsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Post");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ApiTFG.Models.Likes", b =>
+                {
+                    b.HasOne("ApiTFG.Models.Posts", "Post")
+                        .WithMany("Likes")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ApiTFG.Models.AppUser", "User")
+                        .WithMany("UserLikes")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Post");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("ApiTFG.Models.Posts", b =>
                 {
-                    b.HasOne("ApiTFG.Models.AppUser", null)
-                        .WithMany("UserComment")
-                        .HasForeignKey("AppUserId");
-
-                    b.HasOne("ApiTFG.Models.AppUser", null)
+                    b.HasOne("ApiTFG.Models.AppUser", "User")
                         .WithMany("UserPosts")
-                        .HasForeignKey("AppUserId1");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("ApiTFG.Models.UserToFollows", b =>
@@ -341,13 +391,13 @@ namespace ApiTFG.Migrations
                     b.HasOne("ApiTFG.Models.AppUser", "Followed")
                         .WithMany("UserFollowed")
                         .HasForeignKey("FollowedId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ApiTFG.Models.AppUser", "Follower")
                         .WithMany("UserFollower")
                         .HasForeignKey("FollowerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Followed");
@@ -414,12 +464,16 @@ namespace ApiTFG.Migrations
 
                     b.Navigation("UserFollower");
 
+                    b.Navigation("UserLikes");
+
                     b.Navigation("UserPosts");
                 });
 
             modelBuilder.Entity("ApiTFG.Models.Posts", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("Likes");
                 });
 #pragma warning restore 612, 618
         }

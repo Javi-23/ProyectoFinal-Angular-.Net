@@ -7,6 +7,7 @@ namespace ApiTFG.Models
         public Posts()
         {
             Comments = new HashSet<Comment>();
+            Likes = new HashSet<Likes>();
         }
 
         public int Id { get; set; }
@@ -15,5 +16,8 @@ namespace ApiTFG.Models
         public DateTime EditDate { get; set; }
         public string Text { get; set; }
         public ICollection<Comment> Comments { get; set; }
+        public ICollection<Likes> Likes { get; set; }
+
+        public virtual AppUser User { get; set; }
     }
 }

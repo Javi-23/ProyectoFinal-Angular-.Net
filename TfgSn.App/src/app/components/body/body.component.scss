@@ -1,0 +1,33 @@
+.body {
+    width: calc(100% - 5rem);
+    // height: 100vh;
+    margin-top: 92px;
+    margin-left: 5rem;
+    z-index: 0;
+    position: relative;
+    top: 0;
+    transition: all .5s ease;
+    background-color: #f4f7fa;
+    padding: 3rem;
+}
+
+.body-trimmed {
+    width: calc(100% - 16.52626rem);
+    margin-left: 16.5625rem;
+}
+
+.body-md-screen {
+    width: calc(100% - 5rem);
+    margin-left: 5rem;
+}
+
+@media screen and (max-width: 450px) {
+  .body {
+    width: 100%; /* Ajusta el ancho al 100% para ocupar toda la pantalla */
+    margin-left: 0; /* Elimina el margen izquierdo */
+    padding: 2rem; /* Ajusta el relleno */
+    display: flex; /* Añade display flex */
+    flex-direction: column; /* Centra el contenido horizontalmente */
+     /* Centra el contenido verticalmente */
+  }
+}

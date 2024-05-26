@@ -50,7 +50,7 @@ namespace ApiTFG.Controllers
                     return BadRequest("No se puede dejar de seguir a ti mismo | No estás siguiendo a este usuario");
                 }
 
-                return Ok("No se pudo realizar la operación");
+                return Ok("Se dejo de seguir al usuario");
             }
             catch (Exception ex)
             {

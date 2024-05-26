@@ -43,7 +43,7 @@ namespace ApiTFG.Services.UserAndPostService
                 var userPostsQuery = await _postRepository.Query(p => p.UserId == userId);
                 var userPosts = await userPostsQuery.Include(p => p.Comments).ToListAsync();
 
-                return MapToUserAndPostDto(userId, username, user.Description, userPosts);
+                return MapToUserAndPostDto(userId, username, user.Description, user.Image,  userPosts);
             }
             catch (Exception ex)
             {
@@ -61,9 +61,12 @@ namespace ApiTFG.Services.UserAndPostService
                 foreach (var user in users)
                 {
                     var userPostsQuery = await _postRepository.Query(p => p.UserId == user.Id);
-                    var userPosts = await userPostsQuery.Include(p => p.Comments).ToListAsync(); 
+                    var userPosts = await userPostsQuery
+                    .Include(p => p.Comments)
+                    .Include(p => p.Likes) // Incluir los likes
+                    .ToListAsync();
 
-                    userAndPostList.Add(MapToUserAndPostDto(user.Id, user.UserName, user.Description, userPosts));
+                    userAndPostList.Add(MapToUserAndPostDto(user.Id, user.UserName, user.Description, user.Image, userPosts));
                 }
 
                 return userAndPostList;
@@ -89,7 +92,7 @@ namespace ApiTFG.Services.UserAndPostService
                     var userPostsQuery = await _postRepository.Query(p => p.UserId == followedUserId);
                     var userPosts = await userPostsQuery.Include(p => p.Comments).ToListAsync();
 
-                    userAndPostList.Add(MapToUserAndPostDto(followed.Id, followed.UserName, followed.Description, userPosts));
+                    userAndPostList.Add(MapToUserAndPostDto(followed.Id, followed.UserName, followed.Description, followed.Image, userPosts));
                 }
 
                 return userAndPostList;
@@ -100,15 +103,24 @@ namespace ApiTFG.Services.UserAndPostService
             }
         }
 
-        private UserAndPostDto MapToUserAndPostDto(string userId, string username, string description, List<Posts> posts)
+        private UserAndPostDto MapToUserAndPostDto(string userId, string username, string description, byte[] image, List<Posts> posts)
         {
-            return new UserAndPostDto
+            try
             {
-                UserId = userId,
-                UserName = username,
-                Description = description,
-                Posts = _mapper.Map<List<PostDTO>>(posts)
-            };
+                return new UserAndPostDto
+                {
+                    UserId = userId,
+                    UserName = username,
+                    Description = description,
+                    Image = image,
+                    Posts = _mapper.Map<List<PostDTO>>(posts)
+                };
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private string GetUsername()

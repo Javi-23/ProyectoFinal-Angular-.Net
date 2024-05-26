@@ -27,7 +27,14 @@ namespace ApiTFG.Utils
                 .ReverseMap();
             #endregion
 
-
+            #region Likes
+            CreateMap<Likes, LikesDTO>().ReverseMap();
+            CreateMap<LikesDTO, AppUser>()
+               .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.UserId ))
+               .ReverseMap();
+            #endregion Likes
         }
-    }
-}
+
+
+
+    }}

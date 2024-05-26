@@ -90,5 +90,33 @@ namespace ApiTFG.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPost("like-post/{id}")]
+        public async Task<ActionResult<bool>> LikePost(int id)
+        {
+            try
+            {
+                var result = await _postService.LikePost(id);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("unlike-post/{id}")]
+        public async Task<ActionResult<bool>> UnlikePost(int id)
+        {
+            try
+            {
+                var result = await _postService.UnlikePost(id);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

@@ -1,0 +1,48 @@
+mat-card {
+    max-width: 400px; /* Reducir el ancho máximo */
+    margin: 4em auto;
+    text-align: center;
+    padding: 2em; /* Agregar espacio interno */
+    border-radius: 10px; /* Agregar bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregar sombra */
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px; /* Agregar espacio inferior */
+  }
+  
+  .full-width {
+    width: 100%; /* Ancho completo */
+  }
+  
+  .button-row {
+    padding-top: 20px; /* Aumentar el espacio superior */
+    display: flex;
+    justify-content: center; /* Centrar los botones */
+  }
+  
+  .button-row a {
+    margin-right: 16px; /* Aumentar el espacio entre los botones */
+    text-decoration: none;
+    color: #007bff; /* Cambiar color del enlace */
+  }
+  
+  .forget-password {
+    text-align: left; /* Alinear a la izquierda */
+  }
+  
+  .usernameInput {
+    margin-top: 20px; /* Aumentar el espacio superior */
+  }
+  
+  .contentBody {
+    padding: 2em; /* Agregar espacio interno */
+    background: #f5f5f5; /* Cambiar color de fondo */
+  }
+  
+  .aLink {
+    float: right; /* Mantener enlace flotando a la derecha */
+    text-decoration: none;
+    color: #007bff; /* Cambiar color del enlace */
+  }

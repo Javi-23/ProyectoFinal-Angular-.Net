@@ -9,6 +9,8 @@ namespace ApiTFG.Services.Post
         Task<bool> DeletePost(int id);
         Task<CommentDTO> CreateComment(int postsId, string text);
         Task<bool> DeleteComment(int id);
+        Task<bool> LikePost(int postId);
+        Task<bool> UnlikePost(int postId);
 
     }
 }

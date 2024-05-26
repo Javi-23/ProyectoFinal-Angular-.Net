@@ -4,6 +4,11 @@ import { Register } from './models/register';
 import { JwtAuth } from './models/jwtAuth';
 import { AutheticationService } from './services/authetication.service';
 
+interface SideNavToggle {
+  screenWidth: number;
+  collapsed: boolean;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,9 +16,15 @@ import { AutheticationService } from './services/authetication.service';
 })
 export class AppComponent {
   title = 'TfgSn.App';
+  hideSidenav: boolean = false;
+  
+  IsSideNavCollapsed = false;
+  screenWidth = 0;
+
   loginDto = new Login();
   registerDto = new Register();
   jwtDto = new JwtAuth();
+  filteredUsers: any[] = [];
 
   constructor(private authService: AutheticationService) {}
 
@@ -31,5 +42,14 @@ export class AppComponent {
     this.authService.getWeather().subscribe((weatherdata: any) => {
       console.log(weatherdata);
     })
+  }
+
+  onToggleSideNav(data: SideNavToggle): void {
+    this.screenWidth = data.screenWidth;
+    this.IsSideNavCollapsed = data.collapsed;
+  }
+
+  onUserFilter(filteredData: any[]) {
+    this.filteredUsers = filteredData;
   }
 }

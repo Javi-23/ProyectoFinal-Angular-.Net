@@ -1,0 +1,22 @@
+<div *ngIf="userPosts">
+    <div *ngFor="let post of flattenAndSortPosts(userPosts)" class="post-card">
+      <div class="post-header">
+        <div class="post-header-avatar"></div>
+        <div class="post-header-info">
+          <h3>{{ post.userName }}</h3>
+          <p>{{ post.description }}</p>
+        </div>
+      </div>
+      <div class="post-content">
+        <p>{{ post.text }}</p>
+        <p>{{ formatDate(post.creationDate) }}</p>
+      </div>
+      <div class="post-actions">
+        <button class="action-button">Like</button>
+        <button class="action-button">Comment</button>
+        <button *ngIf="post.comments.length > 0" class="action-button" (click)="openCommentsDialog(post)">
+          View Comments ({{ post.comments.length }})
+        </button>
+      </div>
+    </div>
+  </div>

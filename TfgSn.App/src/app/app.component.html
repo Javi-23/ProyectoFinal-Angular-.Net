@@ -1,4 +1,4 @@
-
+<!-- 
 <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -294,8 +294,8 @@
   }
 </style>
 
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
+
+ <div class="toolbar" role="banner">
   <img
     width="40"
     alt="Angular Logo"
@@ -335,7 +335,7 @@
   <button (click)="Weather()">Get Weather</button>
 
 
-</div>
+</div> --> 
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
@@ -345,4 +345,19 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<router-outlet></router-outlet>
+<div class="content-body">
+  <router-outlet></router-outlet>
+</div>
+
+<app-header
+  [collapsed]="IsSideNavCollapsed"
+  [screenWidth]="screenWidth"> 
+  >
+</app-header>
+<app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+<app-body
+[collapsed]="IsSideNavCollapsed"
+  [screenWidth]="screenWidth">  
+</app-body>
+
+

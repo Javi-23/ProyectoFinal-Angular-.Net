@@ -1,0 +1,28 @@
+<div class="dialog-card">
+  <div class="post-content">
+    <h2>{{post.userName}}</h2>
+    <p>{{ post.text }}</p>
+    <p>{{ post.creationDate }}</p>
+    <h2 class="comments-heading">Comments</h2>
+    <div class="comments-container" *ngIf="post.comments && post.comments.length > 0">
+      <div class="scrollable-comments">
+        <div class="comment" *ngFor="let comment of post.comments">
+          <p><strong>{{ comment.userName }}</strong>: {{ comment.text }}</p>
+          <p class="comment-date">{{ formatDate(comment.creationDate) }}</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!data.post || !data.post.comments || data.post.comments.length === 0">
+      <p>No comments available.</p>
+    </div>
+  </div>
+  <div class="post-actions" align="end">
+    <div class="comment-form" *ngIf="showCommentForm">
+      <form #commentForm="ngForm" (ngSubmit)="createComment()">
+        <input type="text" placeholder="Add a comment" name="commentText" [(ngModel)]="commentText" required>
+        <button type="submit" class="action-button" [disabled]="commentForm.invalid">Add Comment</button>
+      </form>
+    </div>
+    <button class="action-button" (click)="toggleCommentForm()" *ngIf="!showCommentForm">Add Comment</button>
+  </div>
+</div>

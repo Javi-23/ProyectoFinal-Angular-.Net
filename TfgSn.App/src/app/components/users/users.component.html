@@ -1,0 +1,12 @@
+<div class="user-list">
+    <h2>Usuarios</h2>
+    <div *ngIf="filteredUsers.length > 0; else noUsers">
+      <div *ngFor="let user of filteredUsers" class="user-card" (click)="navigateToOtherProfile(user.userName)">
+        <h3>{{ user.userName }}</h3>
+        <p>{{ user.description }}</p>
+      </div>
+    </div>
+    <ng-template #noUsers>
+        <p>No hay usuarios disponibles.</p>
+      </ng-template>
+  </div>

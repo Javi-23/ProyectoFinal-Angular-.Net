@@ -1,0 +1,48 @@
+<mat-card>
+    <mat-card-content>
+      <div class="header">
+        <h2>Registrarse</h2>
+      </div>
+      <form (ngSubmit)="onRegister()" [formGroup]="registerForm">
+        <div class="input-field">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Usuario</mat-label>
+            <input formControlName="name" matInput placeholder="Introduzca el nombre de usuario" required />
+            <mat-error *ngIf="registerForm.get('name')?.invalid">El usuario es requerido</mat-error>
+          </mat-form-field>
+        </div>
+  
+        <div class="input-field">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput type="email" placeholder="Introduzca su dirección de correo electrónico" required />
+            <mat-error *ngIf="registerForm.get('email')?.invalid">El email es requerido</mat-error>
+          </mat-form-field>
+        </div>
+  
+        <div class="input-field">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Descripción</mat-label>
+            <textarea formControlName="description" matInput placeholder="Introduzca una descripción"></textarea>
+          </mat-form-field>
+        </div>
+  
+        <div class="input-field">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" placeholder="Introduzca su contraseña" required />
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <mat-error *ngIf="registerForm.get('password')?.invalid">La contraseña es requerida</mat-error>
+          </mat-form-field>
+        </div>
+  
+        <button mat-flat-button color="primary">Registrarse</button>
+      </form>
+  
+      <div class="button-row">
+        <p>¿Ya tienes una cuenta? <a class="aLink" routerLink="/login">Inicia sesión</a></p>
+      </div>
+    </mat-card-content>
+  </mat-card>

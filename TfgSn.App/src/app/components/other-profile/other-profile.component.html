@@ -1,0 +1,52 @@
+<div class="profile-container">
+    <div class="profile-header">
+      <img src="../../assets/flags/mifoto.jpg" alt="Foto de perfil" class="profile-image">
+      <div class="profile-info">
+        <h2>{{ user?.userName }}</h2>
+        <p>{{ user?.description }}</p>
+        <button class="follow-button" (click)="followUser()" *ngIf="!isFollowing">Seguir</button>
+        <button class="follow-button" (click)="unfollowUser()" *ngIf="isFollowing">Siguiendo</button>
+      </div>
+    </div>
+  
+    <div class="profile-stats">
+      <div class="stat-item">
+        <button class="stat-button" (click)="showFollower()">
+          <span class="stat-value">{{ userFollower?.length || 0 }}</span>
+          <span class="stat-label">Seguidores</span>
+        </button>
+      </div>
+      <div class="stat-item">
+        <button class="stat-button" (click)="showFollowed()">
+          <span class="stat-value">{{ userFollowed?.length || 0 }}</span>
+          <span class="stat-label">Seguidos</span>
+        </button>
+      </div>
+      <div class="stat-item stat-button">
+        <span class="stat-value">{{ userPosts && userPosts.posts ? userPosts.posts.length : 0 }}</span>
+        <span class="stat-label">Publicaciones</span>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="userPosts">
+    <div *ngFor="let post of flattenAndSortPosts(userPosts)" class="post-card">
+      <div class="post-header">
+        <div class="post-header-avatar"></div>
+        <div class="post-header-info">
+          <h3>{{ post.userName }}</h3>
+          <p>{{ post.description }}</p>
+        </div>
+      </div>
+      <div class="post-content">
+        <p>{{ post.text }}</p>
+        <p>{{ formatDate(post.creationDate) }}</p>
+      </div>
+      <div class="post-actions">
+        <button class="action-button">Like</button>
+        <button class="action-button">Comment</button>
+        <button *ngIf="post.comments.length > 0" class="action-button">
+          View Comments ({{ post.comments.length }})
+        </button>
+      </div>
+    </div>

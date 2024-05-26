@@ -6,5 +6,9 @@ namespace ApiTFG.Services.User
     {
         Task<UserViewModel> GetUserByUsernameAsync(string username);
         Task<UserViewModel> UpdateUserDescriptionAsync(string token, string newDescription);
+        Task<UserViewModel> GetMyProfile();
+        Task<List<UserViewModel>> GetAllUsers();
+        Task<List<UserViewModel>> GetUsersByUsernameStartingWithAsync(string prefix);
+        Task<UserViewModel> UpdateUserImageAsync(string token, IFormFile imageFile);  
     }
 }
