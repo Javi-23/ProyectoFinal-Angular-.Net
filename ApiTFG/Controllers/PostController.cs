@@ -22,11 +22,11 @@ namespace ApiTFG.Controllers
         }
 
         [HttpPost("create-post")]
-        public async Task<ActionResult<PostDTO>> CreatePost([FromBody] CreateUpdatePostRequest request)
+        public async Task<ActionResult<PostDTO>> CreatePost([FromForm] CreateUpdatePostRequest request)
         {
             try
             {
-                var createdPost = await _postService.CreatePost(request.Text);
+                var createdPost = await _postService.CreatePost(request.Text, request.ImageFile);
                 return Ok(createdPost);
             }
             catch (Exception ex)
@@ -105,13 +105,20 @@ namespace ApiTFG.Controllers
             }
         }
 
-        [HttpPost("unlike-post/{id}")]
-        public async Task<ActionResult<bool>> UnlikePost(int id)
+        [Authorize]
+        [HttpGet("download-uploaded-image")]
+        public async Task<IActionResult> DownloadUploadedImage([FromQuery] int postId)
         {
             try
             {
-                var result = await _postService.UnlikePost(id);
-                return Ok(result);
+                var imageBytes = await _postService.GetPostImage(postId);
+
+                if (imageBytes == null || imageBytes.Length == 0)
+                {
+                    return NotFound("Image not found for the specified post.");
+                }
+
+                return File(imageBytes, "image/jpeg", $"{postId}_uploaded_image.jpg");
             }
             catch (Exception ex)
             {

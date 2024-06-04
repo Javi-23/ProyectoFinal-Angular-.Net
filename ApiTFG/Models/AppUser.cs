@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ApiTFG.Models
 {
+    [Table("T_AppUser")]
     public class AppUser : IdentityUser
     {
-
         public AppUser()
         {
             UserPosts = new HashSet<Posts>();
@@ -16,9 +18,13 @@ namespace ApiTFG.Models
             UserLikes = new HashSet<Likes>();
         }
 
+        [Column("C_Description")]
         public string? Description { get; set; }
 
+        [Column("C_Image")]
         public byte[]? Image { get; set; }
+
+        [InverseProperty("User")]
         public ICollection<Posts> UserPosts { get; set; }
 
         [InverseProperty("Follower")]
@@ -27,9 +33,10 @@ namespace ApiTFG.Models
         [InverseProperty("Followed")]
         public ICollection<UserToFollows> UserFollowed { get; set; }
 
-        public ICollection<Comment> UserComment{ get; set; }
+        [InverseProperty("User")]
+        public ICollection<Comment> UserComment { get; set; }
 
+        [InverseProperty("User")]
         public ICollection<Likes> UserLikes { get; set; }
-
     }
 }

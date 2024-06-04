@@ -1,5 +1,6 @@
 ﻿using ApiTFG.Data;
 using ApiTFG.Dtos;
+using ApiTFG.Exceptions;
 using ApiTFG.Models;
 using ApiTFG.Repository.Contracts;
 using Microsoft.EntityFrameworkCore;
@@ -22,16 +23,21 @@ namespace ApiTFG.Repository
                  .ToListAsync();
         }
 
+
         public async Task<string> GetUserIdByUsername(string username)
         {
             try
             {
                 var user = await _appDbContext.Users.FirstOrDefaultAsync(u => u.UserName == username);
-                return user?.Id;
+                if (user == null)
+                {
+                    throw new UserException($"User with username '{username}' not found.");
+                }
+                return user.Id;
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new UserException("Error retrieving user by username", ex);
             }
         }
     }

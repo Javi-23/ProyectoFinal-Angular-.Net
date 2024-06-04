@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { PostDto } from 'src/app/models/Post/PostDto';
 import { UserViewModel } from 'src/app/models/User/UserViewModel';
 
 @Injectable({
@@ -10,6 +11,10 @@ export class SharedService {
   filteredUsers$: Observable<UserViewModel[]> = this.filteredUsersSubject.asObservable();
   private profileImageUpdatedSource = new Subject<void>();
   profileImageUpdated$ = this.profileImageUpdatedSource.asObservable();
+  private userId: string = "";
+  private postLikesSubject: BehaviorSubject<PostDto[]> = new BehaviorSubject<PostDto[]>([]);
+  postLikes$ = this.postLikesSubject.asObservable();
+
 
   constructor() { }
 
@@ -19,5 +24,17 @@ export class SharedService {
 
   emitProfileImageUpdated() {
     this.profileImageUpdatedSource.next();
+  }
+
+  setUserId(userId: string): void {
+    this.userId = userId;
+  }
+
+  getUserId(): string {
+    return this.userId;
+  }
+
+  updatePostLikes(posts: PostDto[]) {
+    this.postLikesSubject.next(posts);
   }
 }

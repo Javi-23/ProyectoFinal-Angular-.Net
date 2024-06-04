@@ -4,7 +4,8 @@ namespace ApiTFG.Services.User
 {
     public interface IUserService
     {
-        Task<UserViewModel> GetUserByUsernameAsync(string username);
+        Task<UserViewModel> GetUserByUserIdAsync(string userId);
+        Task<UserViewModel> GetUserByUserNameAsync(string userName);
         Task<UserViewModel> UpdateUserDescriptionAsync(string token, string newDescription);
         Task<UserViewModel> GetMyProfile();
         Task<List<UserViewModel>> GetAllUsers();

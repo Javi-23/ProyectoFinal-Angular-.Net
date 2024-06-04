@@ -21,12 +21,20 @@ export class BodyComponent implements OnInit {
     });
   }
 
+  esRutaHijaDeMain(): boolean {
+    return this.rutaActual.startsWith('/main/');
+  }
+
   getBodyClass(): string {
-    let styleClass = '';
-    if (this.collapsed && this.screenWidth > 768) {
-      styleClass = 'body-trimmed';
-    } else if (this.collapsed && this.screenWidth <= 768 && this.screenWidth > 0) {
-      styleClass = 'body-md-screen';
+    let styleClass = 'body';
+    if (this.esRutaHijaDeMain()) {
+      if (this.collapsed && this.screenWidth > 768) {
+        styleClass += ' body-trimmed';
+      } else if (this.collapsed && this.screenWidth <= 768 && this.screenWidth > 0) {
+        styleClass += ' body-md-screen';
+      }
+    } else {
+      styleClass += ' no-main';
     }
     return styleClass;
   }

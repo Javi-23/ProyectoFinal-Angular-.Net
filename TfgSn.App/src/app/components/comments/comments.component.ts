@@ -2,17 +2,15 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { PostService } from 'src/app/services/post/post.service'; 
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { CommentDTO } from 'src/app/models/Comment/CommentDTO';
-import { FlattenedPost } from 'src/app/models/Interfaces/FlattenedPost';
-import { Comments } from 'src/app/models/Interfaces/Comment';
-import { FlattenedPostPost } from 'src/app/models/Interfaces/FlattenedPost-Post';
 import { CommentPost } from 'src/app/models/Interfaces/CommentPost';
 import { UserService } from 'src/app/services/user/user.service';
 import { UserViewModel } from 'src/app/models/User/UserViewModel';
+import { PostDto } from 'src/app/models/Post/PostDto';
+import { FlattenedPost } from 'src/app/models/Post/FlattenedPost';
 
 interface DialogData {
   comments: Comment;
-  post: FlattenedPost;
+  post: PostDto;
 }
 
 @Component({
@@ -22,7 +20,7 @@ interface DialogData {
 })
 export class CommentsComponent implements OnInit{
 
-  post: FlattenedPostPost;
+  post: FlattenedPost;
   commentText: string = '';
   showCommentForm: boolean = false;
   user: UserViewModel | undefined;

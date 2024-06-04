@@ -1,48 +1,147 @@
-mat-card {
-    max-width: 400px; /* Reducir el ancho máximo */
-    margin: 4em auto;
-    text-align: center;
-    padding: 2em; /* Agregar espacio interno */
-    border-radius: 10px; /* Agregar bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregar sombra */
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  padding: 2em;
+}
+
+.slogan-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #007bff;
+  color: white;
+  padding: 2em;
+  border-radius: 10px;
+  margin-right: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slogan {
+  font-size: 2em;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.form-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-content {
+  width: 100%;
+  max-width: 400px;
+  padding: 2em;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  max-width: 100px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #333;
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-form-field {
+  margin-bottom: 20px;
+}
+
+mat-icon-button {
+  margin-top: -10px;
+}
+
+.forget-password {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+a.aLink {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #0056b3;
   }
-  
-  .header {
-    text-align: center;
-    margin-bottom: 20px; /* Agregar espacio inferior */
+}
+
+button[mat-flat-button] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #0056b3;
   }
-  
-  .full-width {
-    width: 100%; /* Ancho completo */
+}
+
+.button-row {
+  padding-top: 20px;
+
+  p {
+    margin: 0;
   }
-  
-  .button-row {
-    padding-top: 20px; /* Aumentar el espacio superior */
-    display: flex;
-    justify-content: center; /* Centrar los botones */
+}
+
+a.text-link {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #0056b3;
   }
-  
-  .button-row a {
-    margin-right: 16px; /* Aumentar el espacio entre los botones */
-    text-decoration: none;
-    color: #007bff; /* Cambiar color del enlace */
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 1em;
   }
-  
-  .forget-password {
-    text-align: left; /* Alinear a la izquierda */
+
+  .slogan-container {
+    display: none;
   }
-  
-  .usernameInput {
-    margin-top: 20px; /* Aumentar el espacio superior */
+
+  .form-container {
+    margin: 0;
   }
-  
-  .contentBody {
-    padding: 2em; /* Agregar espacio interno */
-    background: #f5f5f5; /* Cambiar color de fondo */
+
+  .form-content {
+    margin: 1em;
   }
-  
-  .aLink {
-    float: right; /* Mantener enlace flotando a la derecha */
-    text-decoration: none;
-    color: #007bff; /* Cambiar color del enlace */
-  }
+}

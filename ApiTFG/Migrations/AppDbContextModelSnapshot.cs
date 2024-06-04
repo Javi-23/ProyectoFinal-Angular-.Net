@@ -35,7 +35,8 @@ namespace ApiTFG.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext")
+                        .HasColumnName("C_Description");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -45,7 +46,8 @@ namespace ApiTFG.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<byte[]>("Image")
-                        .HasColumnType("longblob");
+                        .HasColumnType("longblob")
+                        .HasColumnName("C_Image");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("tinyint(1)");
@@ -96,27 +98,33 @@ namespace ApiTFG.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("C_pk_Comments");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("C_CreationDate");
 
                     b.Property<string>("Text")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext")
+                        .HasColumnName("C_Text");
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("C_UserId");
 
                     b.Property<string>("UserName")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext")
+                        .HasColumnName("C_UserName");
 
                     b.Property<int>("postsId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("C_postsId");
 
                     b.HasKey("Id");
 
@@ -124,23 +132,26 @@ namespace ApiTFG.Migrations
 
                     b.HasIndex("postsId");
 
-                    b.ToTable("Comments");
+                    b.ToTable("T_Comments");
                 });
 
             modelBuilder.Entity("ApiTFG.Models.Likes", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("C_pk_Likes");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("PostId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("C_PostId");
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("C_UserId");
 
                     b.HasKey("Id");
 
@@ -148,53 +159,65 @@ namespace ApiTFG.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Likes");
+                    b.ToTable("T_Likes");
                 });
 
             modelBuilder.Entity("ApiTFG.Models.Posts", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("C_pk_Posts");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("C_CreationDate");
 
                     b.Property<DateTime>("EditDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("C_EditDate");
+
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("longblob")
+                        .HasColumnName("C_Image");
 
                     b.Property<string>("Text")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext")
+                        .HasColumnName("C_Text");
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("C_UserId");
 
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Posts");
+                    b.ToTable("T_Posts");
                 });
 
             modelBuilder.Entity("ApiTFG.Models.UserToFollows", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("C_pk_UserToFollows");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("FollowedId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("C_FollowedId");
 
                     b.Property<string>("FollowerId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("C_FollowerId");
 
                     b.HasKey("Id");
 
@@ -202,7 +225,7 @@ namespace ApiTFG.Migrations
 
                     b.HasIndex("FollowerId");
 
-                    b.ToTable("UserToFollows");
+                    b.ToTable("T_UserToFollows");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

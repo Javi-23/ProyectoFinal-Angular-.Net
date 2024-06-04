@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     const loginData = this.loginForm.value;
     this.authService.login(loginData).subscribe((jwtDto) => {
       localStorage.setItem('jwtToken', jwtDto.token);
-      this.router.navigate(['/posts']);
+      this.router.navigate(['/main/posts']);
     });
   }
 }

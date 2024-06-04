@@ -1,13 +1,19 @@
 ﻿using ApiTFG.Data;
 using ApiTFG.Repository.Contracts;
+using ApiTFG.Exceptions;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace ApiTFG.Repository
 {
     public class GenericRepository<TModel> : IGenericRepository<TModel> where TModel : class
     {
         private readonly AppDbContext _context;
+
         public GenericRepository(AppDbContext context)
         {
             _context = context;
@@ -21,9 +27,9 @@ namespace ApiTFG.Repository
                 await _context.SaveChangesAsync();
                 return model;
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                throw new GenericException("Error occurred while creating the entity", ex);
             }
         }
 
@@ -35,12 +41,11 @@ namespace ApiTFG.Repository
                 await _context.SaveChangesAsync();
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                throw new GenericException("Error occurred while deleting the entity", ex);
             }
         }
-
 
         public async Task<TModel> Get(Expression<Func<TModel, bool>> filter)
         {
@@ -49,9 +54,9 @@ namespace ApiTFG.Repository
                 TModel model = await _context.Set<TModel>().Where(filter).FirstOrDefaultAsync();
                 return model;
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                throw new GenericException("Error occurred while retrieving the entity", ex);
             }
         }
 
@@ -62,9 +67,9 @@ namespace ApiTFG.Repository
                 IQueryable<TModel> queryModel = filter == null ? _context.Set<TModel>() : _context.Set<TModel>().Where(filter);
                 return queryModel;
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                throw new GenericException("Error occurred while querying the entity", ex);
             }
         }
 
@@ -76,9 +81,9 @@ namespace ApiTFG.Repository
                 await _context.SaveChangesAsync();
                 return model;
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                throw new GenericException("Error occurred while updating the entity", ex);
             }
         }
 
@@ -88,9 +93,9 @@ namespace ApiTFG.Repository
             {
                 return await _context.Set<TModel>().ToListAsync();
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                throw new GenericException("Error occurred while retrieving all entities", ex);
             }
         }
     }

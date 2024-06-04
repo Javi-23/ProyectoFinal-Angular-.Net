@@ -21,7 +21,7 @@ namespace ApiTFG.Controllers
         [HttpGet("{username}")]
         public async Task<IActionResult> GetUserByUsername(string username)
         {
-            var userViewModel = await _userService.GetUserByUsernameAsync(username);
+            var userViewModel = await _userService.GetUserByUserNameAsync(username);
             if (userViewModel == null)
             {
                 return NotFound();
@@ -111,7 +111,7 @@ namespace ApiTFG.Controllers
         {
             try
             {
-                var user = await _userService.GetUserByUsernameAsync(username);
+                var user = await _userService.GetUserByUserNameAsync(username);
                 byte[] imageBytes = user.Image;
 
                 return File(imageBytes, "image/jpeg", $"{username}_uploaded_image.jpg");

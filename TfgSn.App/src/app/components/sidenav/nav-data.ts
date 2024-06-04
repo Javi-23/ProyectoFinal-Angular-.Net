@@ -1,6 +1,6 @@
 export const navbarData = [
     {
-        routeLink: 'posts',
+        routeLink: '/main/posts',
         icon: 'fa fa-home',
         label: 'Home'
     } ,
@@ -12,7 +12,7 @@ export const navbarData = [
     },
         
     {
-        routeLink: 'followed',
+        routeLink: '/main/followed',
         icon: 'fa fa-address-book',
         label: 'Seguidos'
     }

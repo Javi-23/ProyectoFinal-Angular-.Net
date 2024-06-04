@@ -1,4 +1,5 @@
 ﻿using ApiTFG.Dtos;
+using ApiTFG.Exceptions;
 using ApiTFG.Models;
 using ApiTFG.Repository;
 using ApiTFG.Repository.Contracts;
@@ -36,18 +37,21 @@ namespace ApiTFG.Services.UserAndPostService
                 var user = await _userRepository.Get(u => u.UserName == username);
                 if (user == null)
                 {
-                    throw new KeyNotFoundException($"No se encontró el usuario con el nombre de usuario {username}");
+                    throw new UserAndPostException($"No user found with the username {username}");
                 }
 
                 var userId = user.Id;
                 var userPostsQuery = await _postRepository.Query(p => p.UserId == userId);
-                var userPosts = await userPostsQuery.Include(p => p.Comments).ToListAsync();
+                var userPosts = await userPostsQuery
+                .Include(p => p.Comments)
+                .Include(p => p.Likes) 
+                .ToListAsync();
 
-                return MapToUserAndPostDto(userId, username, user.Description, user.Image,  userPosts);
+                return MapToUserAndPostDto(userId, username, user.Description, user.Image, userPosts);
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new UserAndPostException("Error retrieving user posts", ex);
             }
         }
 
@@ -62,9 +66,9 @@ namespace ApiTFG.Services.UserAndPostService
                 {
                     var userPostsQuery = await _postRepository.Query(p => p.UserId == user.Id);
                     var userPosts = await userPostsQuery
-                    .Include(p => p.Comments)
-                    .Include(p => p.Likes) // Incluir los likes
-                    .ToListAsync();
+                        .Include(p => p.Comments)
+                        .Include(p => p.Likes)
+                        .ToListAsync();
 
                     userAndPostList.Add(MapToUserAndPostDto(user.Id, user.UserName, user.Description, user.Image, userPosts));
                 }
@@ -73,7 +77,7 @@ namespace ApiTFG.Services.UserAndPostService
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new UserAndPostException("Error retrieving all posts", ex);
             }
         }
 
@@ -90,7 +94,10 @@ namespace ApiTFG.Services.UserAndPostService
                     var followed = await _userRepository.Get(u => u.Id == followedUserId);
 
                     var userPostsQuery = await _postRepository.Query(p => p.UserId == followedUserId);
-                    var userPosts = await userPostsQuery.Include(p => p.Comments).ToListAsync();
+                    var userPosts = await userPostsQuery
+                    .Include(p => p.Comments)
+                    .Include(p => p.Likes)
+                    .ToListAsync();
 
                     userAndPostList.Add(MapToUserAndPostDto(followed.Id, followed.UserName, followed.Description, followed.Image, userPosts));
                 }
@@ -99,28 +106,20 @@ namespace ApiTFG.Services.UserAndPostService
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new UserAndPostException("Error retrieving followed posts", ex);
             }
         }
 
         private UserAndPostDto MapToUserAndPostDto(string userId, string username, string description, byte[] image, List<Posts> posts)
         {
-            try
+            return new UserAndPostDto
             {
-                return new UserAndPostDto
-                {
-                    UserId = userId,
-                    UserName = username,
-                    Description = description,
-                    Image = image,
-                    Posts = _mapper.Map<List<PostDTO>>(posts)
-                };
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+                UserId = userId,
+                UserName = username,
+                Description = description,
+                Image = image,
+                Posts = _mapper.Map<List<PostDTO>>(posts)
+            };
         }
 
         private string GetUsername()

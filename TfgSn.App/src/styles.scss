@@ -29,11 +29,19 @@ body {
     box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
   }
 
+  
+  .post-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+  }
+  
   .post-header {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-
+    
+    
     .post-header-avatar {
       width: 60px;
       height: 60px;
@@ -42,7 +50,7 @@ body {
       margin-right: 20px;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     }
-
+    
     .post-header-info {
       flex-wrap: wrap;
       h3 {
@@ -269,6 +277,160 @@ body {
   .profile-image {
     width: 80px;
     height: 80px;
+  }
+}
+
+// Register y Login
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  padding: 2em;
+}
+
+.slogan-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #007bff;
+  color: white;
+  padding: 2em;
+  border-radius: 10px;
+  margin-right: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slogan {
+  font-size: 2em;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.form-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-content {
+  width: 100%;
+  max-width: 400px;
+  padding: 2em;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  max-width: 100px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #333;
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-form-field {
+  margin-bottom: 20px;
+}
+
+mat-icon-button {
+  margin-top: -10px;
+}
+
+.forget-password {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+a.aLink {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #0056b3;
+  }
+}
+
+button[mat-flat-button] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #0056b3;
+  }
+}
+
+.button-row {
+  padding-top: 20px;
+
+  p {
+    margin: 0;
+  }
+}
+
+a.text-link {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #0056b3;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 1em;
+  }
+
+  .slogan-container {
+    display: none;
+  }
+
+  .form-container {
+    margin: 0;
+  }
+
+  .form-content {
+    margin: 1em;
   }
 }
 

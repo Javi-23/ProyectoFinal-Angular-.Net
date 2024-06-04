@@ -13,6 +13,9 @@ export class PostService {
   createCommentUrl = 'Post/create-comment';
   createPostUrl = 'Post/create-post';
   likePostUrl = 'Post/like-post';
+  unLikePostUrl = 'Post/unlike-post';
+  downloadUploadedImageUrl = 'Post/download-uploaded-image';
+  deletePostUrl = 'Post/delete-post';
 
   constructor(private http: HttpClient) { }
 
@@ -21,10 +24,8 @@ export class PostService {
     return this.http.post<CommentDTO>(url, `"${text}"`, { headers: { 'Content-Type': 'application/json' } });
   }
 
-  createPost(text: string): Observable<PostDto> {
-    const url = `${environment.apiUrl}/${this.createPostUrl}`;
-    const body = { text };
-    return this.http.post<PostDto>(url, body, { headers: { 'Content-Type': 'application/json' } });
+  createPost(formData: FormData): Observable<PostDto> {
+    return this.http.post<PostDto>(`${environment.apiUrl}/${this.createPostUrl}`, formData);
   }
 
   likePost(postId: number): Observable<boolean> {
@@ -32,5 +33,18 @@ export class PostService {
     return this.http.post<boolean>(url, null, { headers: { 'Content-Type': 'application/json' } });
   }
 
+  unlikePost(postId: number): Observable<boolean> {
+    const url = `${environment.apiUrl}/${this.unLikePostUrl}/${postId}`;
+    return this.http.post<boolean>(url, null, { headers: { 'Content-Type': 'application/json' } });
+  }
 
+  downloadUploadedImage(postId: number): Observable<Blob> {
+    const url = `${environment.apiUrl}/${this.downloadUploadedImageUrl}?postId=${postId}`;
+    return this.http.get(url, { responseType: 'blob' });
+  }
+
+  deletePost(postId: number): Observable<boolean> {
+    const url = `${environment.apiUrl}/${this.deletePostUrl}/${postId}`;
+    return this.http.delete<boolean>(url);
+  }
 }

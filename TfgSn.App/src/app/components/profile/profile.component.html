@@ -1,6 +1,6 @@
 <div class="profile-container">
   <div class="profile-header">
-    <img [src]="profileImageUrl" alt="Foto de perfil" class="profile-image" (click)="UploadImageModal()">
+    <img [src]="profileImageUrl" alt="Foto de perfil" class="profile-image">
     <div class="profile-info">
       <h2>{{ user?.userName }}</h2>
       <p>{{ user?.description }}</p>
@@ -25,32 +25,33 @@
       <span class="stat-label">Publicaciones</span>
     </div>
   </div>
-  
-  <div *ngIf="userPosts">
-    <div *ngFor="let post of flattenAndSortPosts(userPosts)" class="post-card">
-      <div class="post-header">
-        <div>
-          <img [src]="profileImageUrl" alt="Foto de perfil" class="post-header-avatar">
-        </div>
-        <div class="post-header-info">
-          <h3>{{ post.userName }}</h3>
-          <p>{{ post.description }}</p>
-        </div>
+</div>
+
+<div *ngIf="userPosts">
+  <div *ngFor="let post of flattenAndSortPosts(userPosts)" class="post-card">
+    <div class="post-header">
+      <div>
+        <img [src]="profileImageUrl" alt="Foto de perfil" class="post-header-avatar">
       </div>
-      <div class="post-content">
-        <p>{{ post.text }}</p>
-        <p>{{ formatDate(post.creationDate) }}</p>
-      </div>
-      <div class="post-actions">
-        <button class="action-button">Like</button>
-        <button class="action-button">Comment</button>
-        <button *ngIf="post.comments.length > 0" class="action-button">
-          View Comments ({{ post.comments.length }})
-        </button>
+      <div class="post-header-info">
+        <h3>{{ post.userName }}</h3>
+        <p>{{ post.description }}</p>
       </div>
     </div>
+    <div class="post-content">
+      <p>{{ post.text }}</p>
+      <img *ngIf="postImages[post.id]" [src]="postImages[post.id]" alt="Imagen del post" class="post-image">
+      <p>{{ formatDate(post.creationDate) }}</p>
+    </div>
+    <div class="post-actions">
+      <button class="action-button" (click)="toggleLike(post)">
+        <mat-icon>{{ post.userHasLiked ? 'thumb_up' : 'thumb_up_off_alt' }}</mat-icon>
+        <span *ngIf="post.likes.length > 0"> ({{ post.likes.length }})</span>
+      </button>
+      <button class="action-button" (click)="openCommentsDialog(post)">
+        <mat-icon>comment</mat-icon>
+        <span *ngIf="post.comments.length > 0"> ({{ post.comments.length }})</span>
+      </button>
+    </div>
   </div>
-  
-  <app-image-modal *ngIf="isUploadImageModalVisible" (closeModal)="UploadImageModal()" (imageUploaded)="onImageUploaded($event)"></app-image-modal>
-
 </div>

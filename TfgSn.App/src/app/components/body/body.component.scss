@@ -11,6 +11,7 @@
     padding: 3rem;
 }
 
+
 .body-trimmed {
     width: calc(100% - 16.52626rem);
     margin-left: 16.5625rem;
@@ -19,6 +20,13 @@
 .body-md-screen {
     width: calc(100% - 5rem);
     margin-left: 5rem;
+}
+
+.no-main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: initial;
 }
 
 @media screen and (max-width: 450px) {

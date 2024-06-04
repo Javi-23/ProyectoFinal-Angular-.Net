@@ -36,16 +36,23 @@ namespace ApiTFG.Utils
 
         public static string ExtractUserIdFromToken(string jwtToken)
         {
-            var handler = new JwtSecurityTokenHandler();
-            var jsonToken = handler.ReadToken(jwtToken) as JwtSecurityToken;
-
-            var userId = jsonToken.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value;
-            if (userId == null)
+            try
             {
-                throw new ArgumentException("El token JWT no contiene información del ID de usuario.");
-            }
+                var handler = new JwtSecurityTokenHandler();
+                var jsonToken = handler.ReadToken(jwtToken) as JwtSecurityToken;
 
-            return userId;
+                var userId = jsonToken.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value;
+                if (userId == null)
+                {
+                    throw new ArgumentException("El token JWT no contiene información del usuario.");
+                }
+
+                return userId;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 }

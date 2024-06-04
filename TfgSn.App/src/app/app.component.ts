@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'; // Importa el Router
+
 import { Login } from './models/login';
 import { Register } from './models/register';
 import { JwtAuth } from './models/jwtAuth';
@@ -26,11 +28,14 @@ export class AppComponent {
   jwtDto = new JwtAuth();
   filteredUsers: any[] = [];
 
-  constructor(private authService: AutheticationService) {}
+  constructor(
+    private authService: AutheticationService,
+    private router: Router // Inyecta el Router
+  ) {}
 
-  register(registerDto: Register) {
-    this.authService.register(registerDto).subscribe();
-  }
+  // register(registerDto: Register) {
+  //   this.authService.register(registerDto).subscribe();
+  // }
 
   login(loginDto: Login) {
     this.authService.login(loginDto).subscribe((jwtDto) => {

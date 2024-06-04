@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { UserAndPostDto } from 'src/app/models/UserAndPost/UserAndPostDto';
 import { UserpostService } from 'src/app/services/user-post/userpost.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -8,13 +8,16 @@ import { FollowsService } from 'src/app/services/follows/follows.service';
 import { FollowDialogComponent } from '../follow-dialog/follow-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SharedService } from 'src/app/services/shared/sharedservice.service.spec';
+import { PostService } from 'src/app/services/post/post.service';
+import { CommentsComponent } from '../comments/comments.component';
+import { PostDto } from 'src/app/models/Post/PostDto';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
   userPosts: UserAndPostDto | undefined;
   userFollowed: UserViewModel[] | undefined;
   userFollower: UserViewModel[] | undefined;
@@ -22,10 +25,12 @@ export class ProfileComponent {
   username: string = "";
   isUploadImageModalVisible = false;
   profileImageUrl: string | null = null;
+  postImages: { [postId: number]: string } = {};
 
   constructor(private userpostService: UserpostService,
      private userService: UserService, private followService: FollowsService, private dialog: MatDialog, 
-     private changeDetectorRef: ChangeDetectorRef, private snackBar: MatSnackBar, private sharedService: SharedService) { }
+     private changeDetectorRef: ChangeDetectorRef, private snackBar: MatSnackBar, private sharedService: SharedService,
+    private postService: PostService) { }
 
   ngOnInit(): void {
     this.getUser();
@@ -51,7 +56,7 @@ export class ProfileComponent {
     this.userpostService.getUserPost(this.username)
       .subscribe(posts => {
         this.userPosts = posts;
-        console.log(posts);
+        this.downloadPostImages(this.userPosts.posts);
       });
   }
 
@@ -71,12 +76,17 @@ export class ProfileComponent {
     })
   }
 
-
   flattenAndSortPosts(userPosts: UserAndPostDto): any[] {
+    const userId = this.sharedService.getUserId();
     return userPosts.posts.map(post => ({
       ...post,
       userName: userPosts.userName,
       description: userPosts.description,
+      likes: post.likes,
+      image: post.image,
+      userHasLiked: post.likes.some(like => like.userId === userId),
+      comments: post.comments,
+      creationDate: (post.creationDate instanceof Date) ? post.creationDate : new Date(post.creationDate)
     })).sort((a, b) => new Date(b.creationDate).getTime() - new Date(a.creationDate).getTime());
   }
 
@@ -105,8 +115,6 @@ export class ProfileComponent {
   formatDate(date: Date): string {
     return new Date(date).toLocaleString();
   }
-
-  
 
   UploadImageModal(): void {
     this.isUploadImageModalVisible = !this.isUploadImageModalVisible;
@@ -141,17 +149,70 @@ export class ProfileComponent {
   setDefaultProfileImage(): void {
     this.profileImageUrl = '../../assets/flags/mifoto.jpg';
   }
+
+  openCommentsDialog(post: PostDto): void {
+    this.dialog.open(CommentsComponent, {
+      width: '500px',
+      data: { post }
+    });
+  }
+
+  toggleLike(post: PostDto): void {
+    this.postService.likePost(post.id).subscribe(response => {
+      const userId = this.sharedService.getUserId();
+      post.userHasLiked = response;
+
+      if (response) {
+        if (!post.likes.some(like => like.userId === userId)) {
+          post.likes.push({
+            userId: userId,
+            id: 0,
+            postId: post.id
+          });
+        }
+      } else {
+        const index = post.likes.findIndex(like => like.userId === userId);
+        if (index !== -1) {
+          post.likes.splice(index, 1);
+        }
+      }
+    });
+  }
+
+  downloadPostImages(posts: PostDto[]): void {
+    posts.forEach((post: PostDto) => {
+      if (post.image) {
+        this.postService.downloadUploadedImage(post.id)
+          .subscribe({
+            next: (response) => {
+              const blob = new Blob([response as BlobPart], { type: 'image/jpeg' });
+              this.postImages[post.id] = URL.createObjectURL(blob);
+              this.changeDetectorRef.detectChanges();
+            },
+            error: (error) => {
+              console.error('Error descargando la imagen del post', error);
+            },
+          });
+      }
+    });
+  }
+
+  confirmDeletePost(postId: number): void {
+    if (confirm('¿Deseas borrar la publicación?')) {
+      this.deletePost(postId);
+    }
+  }
+
+  deletePost(postId: number): void {
+    this.postService.deletePost(postId).subscribe(response => {
+      if (response) {
+        if (this.userPosts) {
+          this.userPosts.posts = this.userPosts.posts.filter(post => post.id !== postId);
+        }
+        this.changeDetectorRef.detectChanges();
+      } else {
+        console.error('Error eliminando el post');
+      }
+    });
+  }
 }
-
-
-
-  // toggleComments(post: any): void {
-  //   post.showComments = !post.showComments;
-  // }
-  
-  // openCommentsDialog(post: any): void {
-  //   const dialogRef = this.dialog.open(CommentsComponent, {
-  //     width: '500px',
-  //     data: { post }
-  //   });
-  // }

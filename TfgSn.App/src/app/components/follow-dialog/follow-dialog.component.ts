@@ -46,7 +46,7 @@ export class FollowDialogComponent {
       .subscribe(user => {
         this.usernameAuthenticated = user.userName;
         console.log('Usuario autenticado:', this.usernameAuthenticated);
-        this.isAuthenticated = this.router.url === '/profile';
+        this.isAuthenticated = this.router.url === '/main/profile';
 
         this.getFollowedUsers();
       });
@@ -61,7 +61,7 @@ export class FollowDialogComponent {
   }
 
   navigateToOtherProfile(username: string): void {
-    this.router.navigateByUrl(`/other-profile/${username}`);
+    this.router.navigateByUrl(`main/other-profile/${username}`);
   }
 
   unfollowUser(userToUnfollow: UserViewModel): void {

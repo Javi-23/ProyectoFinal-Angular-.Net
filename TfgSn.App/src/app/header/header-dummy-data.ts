@@ -2,7 +2,7 @@ export const userItems = [
     {
         icon: 'far fa-user',
         label: 'Mi perfil',
-        route: '/profile'
+        route: '/main/profile'
     },
     {
         icon: 'far fa-cog',

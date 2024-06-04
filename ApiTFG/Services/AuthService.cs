@@ -3,10 +3,14 @@ using ApiTFG.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ApiTFG.Services
 {
@@ -14,6 +18,7 @@ namespace ApiTFG.Services
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly IConfiguration _config;
+        private static List<string> revokedTokens = new List<string>();
 
         public AuthService(UserManager<AppUser> userManager, IConfiguration config)
         {
@@ -23,14 +28,14 @@ namespace ApiTFG.Services
 
         public async Task<bool> RegisterUser(LoginUser user)
         {
-            var AppUser = new AppUser
+            var appUser = new AppUser
             {
                 UserName = user.UserName,
                 Email = user.Email,
                 Description = !string.IsNullOrEmpty(user.Description) ? user.Description : null,
             };
 
-            var result = await _userManager.CreateAsync(AppUser, user.Password);
+            var result = await _userManager.CreateAsync(appUser, user.Password);
             return result.Succeeded;
         }
 
@@ -45,16 +50,24 @@ namespace ApiTFG.Services
             return await _userManager.CheckPasswordAsync(identityUser, user.Password);
         }
 
-        public string GenerateTokenString(LoginDTO user)
+        public async Task<string> GenerateTokenString(LoginDTO user)
         {
+            var identityUser = await _userManager.FindByNameAsync(user.UserName);
+            if (identityUser == null)
+            {
+                throw new ApplicationException("Usuario no encontrado");
+            }
+
+            var userId = identityUser.Id;
+
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Email,user.UserName),
-                new Claim(ClaimTypes.Role,"Admin"),
+                new Claim(ClaimTypes.Email, user.UserName), 
+                new Claim(ClaimTypes.NameIdentifier, userId), 
+                new Claim(ClaimTypes.Role, "Admin"),
             };
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("Jwt:Key").Value));
-
             var signingCred = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha512Signature);
 
             var securityToken = new JwtSecurityToken(
@@ -66,6 +79,33 @@ namespace ApiTFG.Services
 
             string tokenString = new JwtSecurityTokenHandler().WriteToken(securityToken);
             return tokenString;
+
+        }
+
+        public async Task<bool> IsTokenValid(string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes(_config.GetSection("Jwt:Key").Value);
+            try
+            {
+                tokenHandler.ValidateToken(token, new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = true,
+                    ValidIssuer = _config.GetSection("Jwt:Issuer").Value,
+                    ValidateAudience = true,
+                    ValidAudience = _config.GetSection("Jwt:Audience").Value,
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero
+                }, out SecurityToken validatedToken);
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

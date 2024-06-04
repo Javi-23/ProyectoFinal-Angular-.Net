@@ -1,12 +1,13 @@
+import { CommentPost } from "../Interfaces/CommentPost";
 import { LikesDTO } from "../Likes/LikesDto";
-import { Comments } from "./Comment";
 
 export interface FlattenedPost {
     id: number;
     userName: string;
     text: string;
+    image: Uint8Array;
     creationDate: Date;
     description: string;
-    comments: Comments[];
+    comments: CommentPost[];
     likes: LikesDTO[];
   }

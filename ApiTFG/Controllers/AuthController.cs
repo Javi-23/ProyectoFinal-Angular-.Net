@@ -1,5 +1,6 @@
 ﻿using ApiTFG.Dtos;
 using ApiTFG.Models;
+using ApiTFG.Requests;
 using ApiTFG.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,7 @@ namespace ApiTFG.Controllers
         }
 
         [HttpPost("Register", Name = "RegisterUser")]
-        public async Task<IActionResult> RegisterUser(LoginUser user)
+        public async Task<IActionResult> Register(LoginUser user)
         {
             if (await _authService.RegisterUser(user))
             {
@@ -34,16 +35,28 @@ namespace ApiTFG.Controllers
             {
                 return BadRequest();
             }
+
             if (await _authService.Login(user))
             {
-                var tokenString = _authService.GenerateTokenString(user);
+                var tokenString = await _authService.GenerateTokenString(user);
                 return Ok(new LoginRequestResponse()
                 {
                     Token = tokenString,
                     Result = true,
                 });
             }
+
             return BadRequest();
+        }
+
+        [HttpPost("ValidateToken", Name = "ValidateToken")]
+        public async Task<IActionResult> ValidateToken([FromBody] TokenRequestModel model)
+        {
+            if (await _authService.IsTokenValid(model.Token))
+            {
+                return Ok(new { Result = true });
+            }
+            return BadRequest(new { Result = false, Message = "Invalid token" });
         }
     }
 }

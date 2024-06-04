@@ -1,5 +1,9 @@
-<mat-card>
-    <mat-card-content>
+<div class="container">
+  <div class="slogan-container">
+    <h1 class="slogan">¡Únete a nuestra red social y conecta con personas increíbles!</h1>
+  </div>
+  <div class="form-container">
+    <div class="form-content">
       <div class="header">
         <h2>Registrarse</h2>
       </div>
@@ -7,7 +11,7 @@
         <div class="input-field">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Usuario</mat-label>
-            <input formControlName="name" matInput placeholder="Introduzca el nombre de usuario" required />
+            <input formControlName="userName" matInput placeholder="Introduzca el nombre de usuario" required />
             <mat-error *ngIf="registerForm.get('name')?.invalid">El usuario es requerido</mat-error>
           </mat-form-field>
         </div>
@@ -38,11 +42,13 @@
           </mat-form-field>
         </div>
   
-        <button mat-flat-button color="primary">Registrarse</button>
+        <button mat-flat-button color="primary" class="full-width">Registrarse</button>
       </form>
   
       <div class="button-row">
         <p>¿Ya tienes una cuenta? <a class="aLink" routerLink="/login">Inicia sesión</a></p>
       </div>
-    </mat-card-content>
-  </mat-card>
+      
+    </div>
+  </div>
+</div>

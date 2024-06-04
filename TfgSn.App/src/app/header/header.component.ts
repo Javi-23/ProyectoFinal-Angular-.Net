@@ -103,8 +103,18 @@ export class HeaderComponent implements OnInit {
   handleMenuClick(item: any) {
     if (item.label === 'Ajustes') {
       this.openSettings();
+    } else if (item.label === 'Cerrar Sesión') {
+      this.logout();
     } else if (item.route) {
       this.router.navigate([item.route]);
+    }
+  }
+  
+  logout() {
+    const confirmLogout = confirm('¿Estás seguro de que deseas cerrar sesión?');
+    if (confirmLogout) {
+      localStorage.removeItem('jwtToken');
+      this.router.navigate(['']);
     }
   }
 

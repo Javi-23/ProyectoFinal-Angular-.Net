@@ -1,11 +1,16 @@
 ﻿using ApiTFG.Data;
+using ApiTFG.Exceptions;
 using ApiTFG.Models;
 using ApiTFG.NewFolder;
 using ApiTFG.Utils;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ApiTFG.Services.User
 {
@@ -24,13 +29,13 @@ namespace ApiTFG.Services.User
         {
             try
             {
-                var username = GetUsername();
-                if (username == null)
+                var userId = GetUserId();
+                if (userId == null)
                 {
-                    throw new ArgumentException($"No se encontró ningún nombre de usuario.");
+                    throw new UserException($"Failed to retrieve the data");
                 }
 
-                var user = await GetUserByUsernameAsync(username);
+                var user = await GetUserByUserIdAsync(userId);
                 return new UserViewModel
                 {
                     UserName = user.UserName,
@@ -40,30 +45,7 @@ namespace ApiTFG.Services.User
             }
             catch (Exception ex)
             {
-                throw;
-            }
-        }
-
-        public async Task<UserViewModel> GetUserByUsernameAsync(string username)
-        {
-            try
-            {
-                var user = await _dbContext.Users.SingleOrDefaultAsync(u => u.UserName == username);
-                if (user == null)
-                {
-                    throw new ArgumentException($"No se encontró ningún usuario con el nombre deusuario '{username}'.");
-                }
-
-                return new UserViewModel
-                {
-                    UserName = user.UserName,
-                    Description = user.Description,
-                    Image = user.Image
-                };
-            }
-            catch (Exception ex)
-            {
-                throw;
+                throw new UserException("Error retrieving user profile", ex);
             }
         }
 
@@ -72,12 +54,12 @@ namespace ApiTFG.Services.User
             try
             {
                 var jwtToken = JwtUtils.ExtractJwtToken(_httpContextAccessor.HttpContext);
-                var username = JwtUtils.ExtractUsernameFromToken(jwtToken);
+                var userId = JwtUtils.ExtractUserIdFromToken(jwtToken);
 
-                var user = await _dbContext.Users.SingleOrDefaultAsync(u => u.UserName == username);
+                var user = await _dbContext.Users.SingleOrDefaultAsync(u => u.Id == userId);
                 if (user == null)
                 {
-                    throw new ArgumentException($"No se encontró ningún usuario con el nombre de usuario '{username}'.");
+                    throw new UserException($"No user found with user ID '{userId}'.");
                 }
 
                 user.Description = newDescription;
@@ -92,7 +74,7 @@ namespace ApiTFG.Services.User
             }
             catch (Exception ex)
             {
-                throw;
+                throw new UserException("Error updating user description", ex);
             }
         }
 
@@ -110,7 +92,7 @@ namespace ApiTFG.Services.User
             }
             catch (Exception ex)
             {
-                throw; 
+                throw new UserException("Error retrieving all users", ex);
             }
         }
         public async Task<List<UserViewModel>> GetUsersByUsernameStartingWithAsync(string prefix)
@@ -128,15 +110,61 @@ namespace ApiTFG.Services.User
             }
             catch (Exception ex)
             {
-                throw;
+                throw new UserException("Error retrieving users by username starting with the specified prefix", ex);
             }
         }
 
+        public async Task<UserViewModel> GetUserByUserIdAsync(string userId)
+        {
+            try
+            {
+                var user = await _dbContext.Users.SingleOrDefaultAsync(u => u.Id == userId);
+                if (user == null)
+                {
+                    throw new UserException($"No user found with ID '{userId}'.");
 
-        private string GetUsername()
+                }
+
+                return new UserViewModel
+                {
+                    UserName = user.UserName,
+                    Description = user.Description,
+                    Image = user.Image
+                };
+            }
+            catch (Exception ex)
+            {
+                throw new UserException($"No user found with ID '{userId}'.");
+            }
+        }
+
+        public async Task<UserViewModel> GetUserByUserNameAsync(string userName)
+        {
+            try
+            {
+                var user = await _dbContext.Users.SingleOrDefaultAsync(u => u.UserName == userName);
+                if (user == null)
+                {
+                    throw new UserException($"No user found with username '{userName}'.");
+                }
+
+                return new UserViewModel
+                {
+                    UserName = user.UserName,
+                    Description = user.Description,
+                    Image = user.Image
+                };
+            }
+            catch (Exception ex)
+            {
+                throw new UserException("Error retrieving user by username", ex);
+            }
+        }
+
+        private string GetUserId()
         {
             var jwtToken = JwtUtils.ExtractJwtToken(_httpContextAccessor.HttpContext);
-            return JwtUtils.ExtractUsernameFromToken(jwtToken);
+            return JwtUtils.ExtractUserIdFromToken(jwtToken);
         }
 
         public async Task<UserViewModel> UpdateUserImageAsync(string token, IFormFile imageFile)
@@ -144,12 +172,12 @@ namespace ApiTFG.Services.User
             try
             {
                 var jwtToken = JwtUtils.ExtractJwtToken(_httpContextAccessor.HttpContext);
-                var username = JwtUtils.ExtractUsernameFromToken(jwtToken);
+                var userId = JwtUtils.ExtractUserIdFromToken(jwtToken);
 
-                var user = await _dbContext.Users.SingleOrDefaultAsync(u => u.UserName == username);
+                var user = await _dbContext.Users.SingleOrDefaultAsync(u => u.Id == userId);
                 if (user == null)
                 {
-                    throw new ArgumentException($"No se encontró ningún usuario con el nombre de usuario '{username}'.");
+                    throw new UserException($"No user found with ID '{userId}'.");
                 }
 
                 if (imageFile != null && imageFile.Length > 0)
@@ -172,10 +200,8 @@ namespace ApiTFG.Services.User
             }
             catch (Exception ex)
             {
-                throw;
+                throw new UserException("Error updating user image", ex);
             }
         }
     }
 }
-
-

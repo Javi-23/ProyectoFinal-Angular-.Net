@@ -5,8 +5,9 @@ namespace ApiTFG.Services
 {
     public interface IAuthService
     {
-        string GenerateTokenString(LoginDTO user);
+        Task<string> GenerateTokenString(LoginDTO user);
         Task<bool> Login(LoginDTO user);
         Task<bool> RegisterUser(LoginUser user);
+        Task<bool> IsTokenValid(string token);
     }
 }

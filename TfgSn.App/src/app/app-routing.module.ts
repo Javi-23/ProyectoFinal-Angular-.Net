@@ -7,15 +7,18 @@ import { FollowedpostsComponent } from './components/followed-posts/followedpost
 import { ProfileComponent } from './components/profile/profile.component';
 import { OtherProfileComponent } from './components/other-profile/other-profile.component';
 import { UsersComponent } from './components/users/users.component';
+import { AuthGuard } from './services/guard/auth.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'posts', component: UserAllPostsComponent },
-  { path: 'followed', component: FollowedpostsComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'other-profile/:username', component: OtherProfileComponent },
-  { path: "users", component: UsersComponent}
+  { path: 'main', canActivate: [AuthGuard], children: [
+    { path: 'posts', component: UserAllPostsComponent },
+    { path: 'followed', component: FollowedpostsComponent },
+    { path: 'profile', component: ProfileComponent },
+    { path: 'other-profile/:username', component: OtherProfileComponent },
+    { path: 'users', component: UsersComponent }
+  ]}
 ];
 
 @NgModule({

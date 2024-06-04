@@ -1,10 +1,14 @@
 ﻿using ApiTFG.Dtos;
+using ApiTFG.Exceptions;
 using ApiTFG.Models;
 using ApiTFG.Repository;
 using ApiTFG.Repository.Contracts;
 using ApiTFG.Utils;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ApiTFG.Services.Post
 {
@@ -24,33 +28,44 @@ namespace ApiTFG.Services.Post
             _userRepository = userRepository;
         }
 
-        public async Task<PostDTO> CreatePost(string text)
+        public async Task<PostDTO> CreatePost(string text, IFormFile imageFile)
         {
             try
             {
                 EnsureUserAuthenticated();
 
                 var userId = await GetUserId();
+                byte[]? image = null;
+
+                if (imageFile != null && imageFile.Length > 0)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await imageFile.CopyToAsync(memoryStream);
+                        image = memoryStream.ToArray();
+                    }
+                }
 
                 var post = new Posts
                 {
                     CreationDate = DateTime.Now,
                     UserId = userId,
                     Text = text,
+                    Image = image,
                 };
 
                 var createdPost = await _postRepository.Create(post);
 
                 if (createdPost == null)
                 {
-                    throw new TaskCanceledException("No se pudo crear la publicación");
+                    throw new PostException("No se pudo crear la publicación");
                 }
 
                 return _mapper.Map<PostDTO>(createdPost);
             }
             catch (Exception ex)
             {
-                throw;
+                throw new PostException("Error al crear la publicación", ex);
             }
         }
 
@@ -65,7 +80,7 @@ namespace ApiTFG.Services.Post
             }
             catch (Exception ex)
             {
-                throw;
+                throw new PostException("Error deleting the post", ex);
             }
         }
 
@@ -82,11 +97,11 @@ namespace ApiTFG.Services.Post
                 var updatedPost = await _postRepository.Update(post);
 
                 return _mapper.Map<PostDTO>(updatedPost);
-            } 
-            catch(Exception ex) 
+            }
+            catch (Exception ex)
             {
-                throw;
-            }         
+                throw new PostException("Error updating the post", ex);
+            }
         }
 
         public async Task<CommentDTO> CreateComment(int postId, string text)
@@ -111,10 +126,10 @@ namespace ApiTFG.Services.Post
 
                 return _mapper.Map<CommentDTO>(comment);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw new PostException("Error creating the comment", ex);
             }
         }
 
@@ -141,9 +156,9 @@ namespace ApiTFG.Services.Post
 
                 return false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new PostException("Error deleting the comment", ex);
             }
         }
 
@@ -153,22 +168,38 @@ namespace ApiTFG.Services.Post
             {
                 EnsureUserAuthenticated();
 
-                var post = await GetPostById(postId);
                 var userId = await GetUserId();
-                var like = new Likes
+                var userPostsQuery = await _postRepository.Query(p => p.Id == postId);
+                var post = await userPostsQuery.Include(p => p.Likes).FirstOrDefaultAsync();
+
+                if (post != null)
                 {
-                    PostId = postId,
-                    UserId = userId
-                };
+                    var existingLike = post.Likes.FirstOrDefault(l => l.UserId == userId);
+                    if (existingLike != null)
+                    {
+                        post.Likes.Remove(existingLike);
+                        await _postRepository.Update(post);
+                        return false; 
+                    }
+                    else
+                    {
+                        var like = new Likes
+                        {
+                            PostId = postId,
+                            UserId = userId
+                        };
 
-                post.Likes.Add(like);
-                await _postRepository.Update(post);
+                        post.Likes.Add(like);
+                        await _postRepository.Update(post);
+                        return true; 
+                    }
+                }
 
-                return true;
+                return false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new PostException("Error liking the post", ex);
             }
         }
 
@@ -195,11 +226,28 @@ namespace ApiTFG.Services.Post
 
                 return false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new PostException("Error unliking the post", ex);
             }
         }
+        public async Task<byte[]> GetPostImage(int postId)
+        {
+            try
+            {
+                var post = await GetPostById(postId);
+                if (post?.Image == null)
+                {
+                    throw new PostException("No image found for the specified post.");
+                }
+                return post.Image;
+            }
+            catch (Exception ex)
+            {
+                throw new PostException("Error retrieving the post image", ex);
+            }
+        }
+
 
 
         private async Task<Posts> GetPostById(int id)
@@ -209,25 +257,7 @@ namespace ApiTFG.Services.Post
                 var post = await _postRepository.Get(p => p.Id == id);
                 if (post == null)
                 {
-                    throw new KeyNotFoundException("No se encontró la publicación");
-                }
-                return post;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        private async Task<Posts> GetPostByCommentId(int id)
-        {
-            try
-            {
-                var post = await _postRepository.Get(filter: p => p.Comments.Any(c => c.Id == id));
-                if (post == null)
-                {
-                    throw new KeyNotFoundException("No se encontró la publicación asociada al comentario");
+                    throw new KeyNotFoundException("Post not found");
                 }
                 return post;
             }
@@ -244,7 +274,7 @@ namespace ApiTFG.Services.Post
             {
                 if (string.IsNullOrEmpty(GetUsername()))
                 {
-                    throw new UnauthorizedAccessException("Usuario no autenticado");
+                    throw new UnauthorizedAccessException("User not authenticated");
                 }
             }
             catch (Exception)
@@ -262,7 +292,7 @@ namespace ApiTFG.Services.Post
 
                 if (userId != currentUserId)
                 {
-                    throw new UnauthorizedAccessException("Usuario no autorizado");
+                    throw new UnauthorizedAccessException("User not authorized");
                 }
             }
             catch (Exception)
@@ -277,6 +307,7 @@ namespace ApiTFG.Services.Post
             var jwtToken = JwtUtils.ExtractJwtToken(_httpContextAccessor.HttpContext);
             return JwtUtils.ExtractUsernameFromToken(jwtToken);
         }
+
 
         private async Task<string> GetUserId()
         {
