@@ -36,6 +36,6 @@ jobs:
         username: ${{ secrets.AZURE_VM_USERNAME }}
         password: ${{ secrets.AZURE_VM_PASSWORD }}
         script: |
-          docker pull ${{ secrets.DOCKER_USERNAME }}/tfgsn-api:latest
+          docker pull ${{ secrets.DOCKER_USERNAME }}/apitfg:latest
           docker pull ${{ secrets.DOCKER_USERNAME }}/tfgsn-app:latest
           docker-compose up -d

@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  tfgsn-api:
+    image: tfgsn-api
+    build:
+      context: ./TfgSn.Api
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+
+  tfgsn-app:
+    image: tfgsn-app
+    build:
+      context: ./TfgSn.App
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"

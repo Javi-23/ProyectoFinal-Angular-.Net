@@ -7,18 +7,6 @@
       "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|c:\\users\\javi\\source\\repos\\proyectofinal-angular\u002B.net\\apitfg\\apitfg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:apitfg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|c:\\users\\javi\\source\\repos\\proyectofinal-angular\u002B.net\\apitfg\\apitfg.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:apitfg.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|c:\\users\\javi\\source\\repos\\proyectofinal-angular\u002B.net\\apitfg\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\cygwin64\\home\\Javi\\combined.pem||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
@@ -68,6 +56,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\dtos\\likesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:dtos\\likesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\apitfg.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:apitfg.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\apitfg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:apitfg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -245,7 +245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 14,
               "Title": "ApiTFG.http",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\ApiTFG.http",
               "RelativeDocumentMoniker": "ApiTFG.http",
@@ -253,8 +253,7 @@
               "RelativeToolTip": "ApiTFG.http",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-06-07T19:59:35.575Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T19:59:35.575Z"
             },
             {
               "$type": "Document",
@@ -271,7 +270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 15,
               "Title": "ApiTFG",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\ApiTFG.csproj",
               "RelativeDocumentMoniker": "ApiTFG.csproj",
@@ -279,12 +278,11 @@
               "RelativeToolTip": "ApiTFG.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-06-07T19:37:16.554Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T19:37:16.554Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "combined.pem",
               "DocumentMoniker": "C:\\cygwin64\\home\\Javi\\combined.pem",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\cygwin64\\home\\Javi\\combined.pem",
@@ -292,12 +290,11 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\..\\cygwin64\\home\\Javi\\combined.pem",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-06-07T18:59:44.374Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T18:59:44.374Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 16,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -305,8 +302,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-07T10:31:09.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T10:31:09.722Z"
             },
             {
               "$type": "Document",
@@ -318,8 +314,7 @@
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AQIAACIAAAAAAAAAAAAewAsAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T16:41:21.646Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T16:41:21.646Z"
             },
             {
               "$type": "Document",
@@ -383,7 +378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Posts.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Models\\Posts.cs",
               "RelativeDocumentMoniker": "Models\\Posts.cs",
@@ -395,7 +390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "AppUser.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Models\\AppUser.cs",
               "RelativeDocumentMoniker": "Models\\AppUser.cs",
@@ -463,8 +458,7 @@
               "RelativeToolTip": "Services\\AuthServiceI.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T16:27:54.257Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T16:27:54.257Z"
             },
             {
               "$type": "Document",
@@ -488,12 +482,11 @@
               "RelativeToolTip": "Services\\AuthService.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAgwEUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T16:27:56.277Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T16:27:56.277Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "Likes.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Models\\Likes.cs",
               "RelativeDocumentMoniker": "Models\\Likes.cs",
@@ -505,7 +498,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "Comment.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Models\\Comment.cs",
               "RelativeDocumentMoniker": "Models\\Comment.cs",
@@ -517,7 +510,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "LoginUser.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Models\\LoginUser.cs",
               "RelativeDocumentMoniker": "Models\\LoginUser.cs",
@@ -529,7 +522,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "UserToFollow.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Models\\UserToFollow.cs",
               "RelativeDocumentMoniker": "Models\\UserToFollow.cs",
@@ -577,7 +570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
               "Title": "PostDTO.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Dtos\\PostDTO.cs",
               "RelativeDocumentMoniker": "Dtos\\PostDTO.cs",
@@ -625,7 +618,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 9,
               "Title": "UserAndPostDto.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Dtos\\UserAndPostDto.cs",
               "RelativeDocumentMoniker": "Dtos\\UserAndPostDto.cs",
@@ -637,7 +630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 10,
               "Title": "CommentDTO.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Dtos\\CommentDTO.cs",
               "RelativeDocumentMoniker": "Dtos\\CommentDTO.cs",
@@ -649,7 +642,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 11,
               "Title": "LoginDTO.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Dtos\\LoginDTO.cs",
               "RelativeDocumentMoniker": "Dtos\\LoginDTO.cs",
@@ -661,7 +654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 12,
               "Title": "LoginRequestResponse.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Dtos\\LoginRequestResponse.cs",
               "RelativeDocumentMoniker": "Dtos\\LoginRequestResponse.cs",
@@ -673,7 +666,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 13,
               "Title": "LikesDTO.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Dtos\\LikesDTO.cs",
               "RelativeDocumentMoniker": "Dtos\\LikesDTO.cs",
@@ -741,8 +734,7 @@
               "RelativeToolTip": "Exceptions\\GenericException.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T19:45:54.972Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T19:45:54.972Z"
             },
             {
               "$type": "Document",
