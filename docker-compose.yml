@@ -4,7 +4,7 @@ services:
   tfgsn-api:
     image: tfgsn-api
     build:
-      context: ./TfgSn.Api
+      context: ./ApiTFG
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
