@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiTFG")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a39da759e7d22560c8652005fd7ced05702c748c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fcddc853eec9e8a1a47f00e7c145efd213f60775")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiTFG")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiTFG")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
