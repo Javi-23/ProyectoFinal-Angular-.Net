@@ -46,5 +46,5 @@ jobs:
           script: |
             cd ProyectoFinal-Angular-.Net
             git pull origin main
-            docker-compose pull
-            docker-compose up -d
+            sudo docker-compose pull
+            sudo docker-compose up -d
