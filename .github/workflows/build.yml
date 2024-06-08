@@ -44,7 +44,7 @@ jobs:
           username: ${{ secrets.AZURE_VM_USERNAME }}
           password: ${{ secrets.AZURE_VM_PASSWORD }}
           script: |
-            cd /ruta/al/repo/clonado # Cambia esta ruta según sea necesario
+            cd https://github.com/Javi-23/ProyectoFinal-Angular-.Net.git
             git pull origin main
             docker-compose pull
             docker-compose up -d
