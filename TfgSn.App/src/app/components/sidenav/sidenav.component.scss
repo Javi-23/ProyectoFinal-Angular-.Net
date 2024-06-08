@@ -110,6 +110,10 @@
 }
 
 @media screen and (max-width: 400px) {
+    .logo-container {
+        display: none;
+    }
+    
     .sidenav {
       width: 100%; /* Ajusta el ancho para que ocupe toda la pantalla */
       height: auto; /* Ajusta la altura para que se ajuste automáticamente según el contenido */

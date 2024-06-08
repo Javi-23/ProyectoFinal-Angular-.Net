@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserAndPostDto } from 'src/app/models/UserAndPost/UserAndPostDto';
 import { UserpostService } from 'src/app/services/user-post/userpost.service';
@@ -8,6 +8,7 @@ import { SharedService } from 'src/app/services/shared/sharedservice.service.spe
 import { UserService } from 'src/app/services/user/user.service';
 import { ChangeDetectorRef } from '@angular/core';
 import { PostDto } from 'src/app/models/Post/PostDto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-all-posts',
@@ -18,6 +19,13 @@ export class UserAllPostsComponent implements OnInit {
   userPosts: UserAndPostDto[] | undefined;
   profileImages: { [username: string]: string } = {};
   postImages: { [postId: number]: string } = {};
+  allImagesLoaded = false;
+  currentPage: number = 1;
+  itemsPerPage: number = 10;
+  pagedPosts: PostDto[] = [];
+  showWelcomeSection: boolean = false;
+
+  @ViewChildren('firstPost') firstPost: QueryList<ElementRef> | undefined;
 
   constructor(
     private userpostService: UserpostService,
@@ -25,7 +33,8 @@ export class UserAllPostsComponent implements OnInit {
     private postService: PostService,
     private sharedService: SharedService,
     private userService: UserService,
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -36,11 +45,16 @@ export class UserAllPostsComponent implements OnInit {
     this.userpostService.getAllPosts().subscribe((posts: UserAndPostDto[]) => {
       this.userPosts = posts;
       this.loadProfileImages(posts);
+      this.showWelcomeSection = true;
+      this.updatePagedPosts();
       console.log(posts);
     });
   }
 
   loadProfileImages(posts: UserAndPostDto[]): void {
+    let loadedCount = 0;
+    const totalImages = posts.length * 2; // Cada usuario y cada post tienen una imagen
+
     posts.forEach(post => {
       if (post.image) {
         this.userService.downloadUploadedImage(post.userName)
@@ -48,14 +62,25 @@ export class UserAllPostsComponent implements OnInit {
             next: (response) => {
               const blob = new Blob([response.body as BlobPart], { type: 'image/jpeg' });
               this.profileImages[post.userName] = URL.createObjectURL(blob);
-              this.changeDetectorRef.detectChanges();
+              loadedCount++;
+              if (loadedCount === totalImages) {
+                this.allImagesLoaded = true;
+              }
             },
             error: (error) => {
               console.error('Error descargando la imagen de perfil', error);
               this.profileImages[post.userName] = '../../assets/flags/mifoto.jpg';
+              loadedCount++;
+              if (loadedCount === totalImages) {
+                this.allImagesLoaded = true;
+              }
             },
           });
       } else {
+        loadedCount++;
+        if (loadedCount === totalImages) {
+          this.allImagesLoaded = true;
+        }
         this.profileImages[post.userName] = '../../assets/flags/mifoto.jpg';
       }
 
@@ -67,12 +92,24 @@ export class UserAllPostsComponent implements OnInit {
                 next: (response) => {
                   const blob = new Blob([response as BlobPart], { type: 'image/jpeg' });
                   this.postImages[p.id] = URL.createObjectURL(blob);
-                  this.changeDetectorRef.detectChanges();
+                  loadedCount++;
+                  if (loadedCount === totalImages) {
+                    this.allImagesLoaded = true;
+                  }
                 },
                 error: (error) => {
                   console.error('Error descargando la imagen del post', error);
+                  loadedCount++;
+                  if (loadedCount === totalImages) {
+                    this.allImagesLoaded = true;
+                  }
                 },
               });
+          } else {
+            loadedCount++;
+            if (loadedCount === totalImages) {
+              this.allImagesLoaded = true;
+            }
           }
         });
       }
@@ -99,6 +136,37 @@ export class UserAllPostsComponent implements OnInit {
         return 0;
       }
     });
+  }
+
+  updatePagedPosts(): void {
+    if (this.userPosts) {
+      const allPosts = this.flattenAndSortPosts(this.userPosts);
+      const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+      const endIndex = startIndex + this.itemsPerPage;
+      this.pagedPosts = allPosts.slice(startIndex, endIndex);
+    }
+  }
+
+  previousPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.updatePagedPosts();
+      this.scrollToTop();
+    }
+  }
+
+  nextPage(): void {
+    if (this.userPosts && this.currentPage < Math.ceil(this.userPosts.length / this.itemsPerPage)) {
+      this.currentPage++;
+      this.updatePagedPosts();
+      this.scrollToTop();
+    }
+  }
+
+  scrollToTop(): void {
+    if (this.firstPost && this.firstPost.first) {
+      this.firstPost.first.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   toggleComments(post: any): void {
@@ -136,5 +204,9 @@ export class UserAllPostsComponent implements OnInit {
         }
       }
     });
+  }
+
+  navigateToOtherProfile(userName: string): void {
+    this.router.navigate(['/profile', userName]);
   }
 }

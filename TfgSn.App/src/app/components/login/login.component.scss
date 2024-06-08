@@ -127,7 +127,7 @@ a.text-link {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 460px) {
   .container {
     flex-direction: column;
     padding: 1em;
@@ -137,11 +137,56 @@ a.text-link {
     display: none;
   }
 
-  .form-container {
-    margin: 0;
-  }
-
   .form-content {
     margin: 1em;
+    max-width: 200px;
   }
+
+  .mat-form-field {
+    margin-bottom: 10px; /* Reducir margen entre campos */
+    font-size: 12px; /* Reducir tamaño de fuente de los campos */
+    width: 10%; /* Ajustar el ancho del campo */
+  }
+
+  .header h2 {
+    font-size: 1.2em;
+  }
+
+  .full-width {
+    height: auto
+  }
+
+  input {
+    font-size: 12px;
+  }
+
+  .mat-icon-button {
+    margin-top: -8px;
+  }
+
+  .forget-password {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  button[mat-flat-button] {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .button-row {
+    padding-top: 10px;
+  }
+
+  .button-row p {
+    font-size: 14px;
+  }
+
+  @media (max-width: 250px) {
+    .form-content {
+      margin: 0 auto;
+      max-width: 200px;
+    }
+  }
+  
 }

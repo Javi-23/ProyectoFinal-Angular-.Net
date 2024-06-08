@@ -4,7 +4,6 @@ import { AutheticationService } from '../../services/authetication.service';
 import { Login } from '../../models/login';
 import { JwtAuth } from '../../models/jwtAuth';
 import { Router } from '@angular/router';
-import { SharedService } from 'src/app/services/shared/sharedservice.service.spec';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +15,7 @@ export class LoginComponent implements OnInit {
   hide = false;
   loginDto: Login = new Login();
   jwtDto: JwtAuth = new JwtAuth();
+  errorMessage: string = '';
 
   constructor(private fb: FormBuilder, private authService: AutheticationService, private router: Router) {
     this.loginForm = this.fb.group({
@@ -31,33 +31,14 @@ export class LoginComponent implements OnInit {
       return;
     }
     const loginData = this.loginForm.value;
-    this.authService.login(loginData).subscribe((jwtDto) => {
-      localStorage.setItem('jwtToken', jwtDto.token);
-      this.router.navigate(['/main/posts']);
-    });
+    this.authService.login(loginData).subscribe(
+      (jwtDto) => {
+        localStorage.setItem('jwtToken', jwtDto.token);
+        this.router.navigate(['/main/posts']);
+      },
+      (error) => {
+        this.errorMessage = error;
+      }
+    );
   }
 }
-
-
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class HomeComponent {
-//   hide: boolean = false;
-
-//   loginDto = new Login();
-//   jwtDto = new JwtAuth();
-
-//   constructor(private authService: AutheticationService) {}
-  
-//   ngOnItit(){
-
-//   }
-
-//   login(loginDto: Login) {
-//     this.authService.login(loginDto).subscribe((jwtDto) => {
-//       localStorage.setItem('jwtToken', jwtDto.token);
-//     });
-//   }
-// }

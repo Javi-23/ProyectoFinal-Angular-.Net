@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { UserAndPostDto } from 'src/app/models/UserAndPost/UserAndPostDto';
 import { UserpostService } from 'src/app/services/user-post/userpost.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -11,6 +11,7 @@ import { SharedService } from 'src/app/services/shared/sharedservice.service.spe
 import { PostService } from 'src/app/services/post/post.service';
 import { CommentsComponent } from '../comments/comments.component';
 import { PostDto } from 'src/app/models/Post/PostDto';
+import { CreatePostComponent } from '../create-post/create-post.component';
 
 @Component({
   selector: 'app-profile',
@@ -26,6 +27,12 @@ export class ProfileComponent implements OnInit {
   isUploadImageModalVisible = false;
   profileImageUrl: string | null = null;
   postImages: { [postId: number]: string } = {};
+  allImagesLoaded = false;
+  currentPage: number = 1;
+  postsPerPage: number = 10;
+  pagedPosts: PostDto[] = [];
+
+  @ViewChildren('firstPost') firstPost: QueryList<ElementRef> | undefined;
 
   constructor(private userpostService: UserpostService,
      private userService: UserService, private followService: FollowsService, private dialog: MatDialog, 
@@ -57,14 +64,24 @@ export class ProfileComponent implements OnInit {
       .subscribe(posts => {
         this.userPosts = posts;
         this.downloadPostImages(this.userPosts.posts);
+        this.updatePagedPosts(); 
       });
   }
+
+  updatePagedPosts(): void {
+    if (this.userPosts) {
+      const allPosts = this.flattenAndSortPosts(this.userPosts);
+      const startIndex = (this.currentPage - 1) * this.postsPerPage;
+      const endIndex = startIndex + this.postsPerPage;
+      this.pagedPosts = allPosts.slice(startIndex, endIndex);
+    }
+  }
+
 
   getFollowedUsers(): void {
     this.followService.getFollowed(this.username)
     .subscribe(followed => {
       this.userFollowed = followed;
-      console.log(followed)
     })
   }
 
@@ -180,6 +197,12 @@ export class ProfileComponent implements OnInit {
   }
 
   downloadPostImages(posts: PostDto[]): void {
+    let loadedImages = 0;
+    const totalImages = posts.filter(post => post.image).length;
+    if (totalImages === 0) {
+        this.allImagesLoaded = true;
+        return;
+    }
     posts.forEach((post: PostDto) => {
       if (post.image) {
         this.postService.downloadUploadedImage(post.id)
@@ -187,15 +210,28 @@ export class ProfileComponent implements OnInit {
             next: (response) => {
               const blob = new Blob([response as BlobPart], { type: 'image/jpeg' });
               this.postImages[post.id] = URL.createObjectURL(blob);
+              loadedImages++;
+
+              if (loadedImages === totalImages) {
+                this.allImagesLoaded = true;
+              }
+              
               this.changeDetectorRef.detectChanges();
             },
             error: (error) => {
               console.error('Error descargando la imagen del post', error);
+              loadedImages++;
+
+              if (loadedImages === totalImages) {
+                this.allImagesLoaded = true;
+              }
+              
+              this.changeDetectorRef.detectChanges();
             },
           });
       }
     });
-  }
+}
 
   confirmDeletePost(postId: number): void {
     if (confirm('¿Deseas borrar la publicación?')) {
@@ -208,6 +244,7 @@ export class ProfileComponent implements OnInit {
       if (response) {
         if (this.userPosts) {
           this.userPosts.posts = this.userPosts.posts.filter(post => post.id !== postId);
+          this.getUserPosts();
         }
         this.changeDetectorRef.detectChanges();
       } else {
@@ -215,4 +252,31 @@ export class ProfileComponent implements OnInit {
       }
     });
   }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(CreatePostComponent, {
+      width: '500px',
+    });
+  }
+
+  nextPage(): void {
+    this.currentPage++;
+    this.updatePagedPosts();
+    this.scrollToTop();
+  }
+  
+  previousPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.updatePagedPosts();
+      this.scrollToTop();
+    }
+  }
+
+  scrollToTop(): void {
+    if (this.firstPost && this.firstPost.first) {
+      this.firstPost.first.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
 }

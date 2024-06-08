@@ -31,11 +31,16 @@
 
 @media screen and (max-width: 450px) {
   .body {
-    width: 100%; /* Ajusta el ancho al 100% para ocupar toda la pantalla */
-    margin-left: 0; /* Elimina el margen izquierdo */
-    padding: 2rem; /* Ajusta el relleno */
-    display: flex; /* Añade display flex */
-    flex-direction: column; /* Centra el contenido horizontalmente */
-     /* Centra el contenido verticalmente */
+    width: 100%;
+    margin-left: 0;
+    padding: 2rem; 
+    display: flex;
+    flex-direction: column;
   }
+
+  .no-main {
+    width: 100%;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  }
+  
 }

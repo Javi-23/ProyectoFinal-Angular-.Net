@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("c2a9bcbd-381a-458d-94fa-9319f3215f31")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiTFG")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aecf8a23f55bad156906385e2ecdf9b1d08b2b50")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0eae4fd20cbc4fb3fdd291616579fe8dffc69368")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiTFG")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiTFG")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

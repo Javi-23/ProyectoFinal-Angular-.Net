@@ -1,6 +1,7 @@
 ﻿using ApiTFG.Dtos;
 using ApiTFG.Models;
 
+
 namespace ApiTFG.Repository.Contracts
 {
     public interface IUserRepository : IGenericRepository<AppUser>

@@ -99,7 +99,10 @@ namespace ApiTFG.Services.User
         {
             try
             {
-                var users = await _dbContext.Users.Where(u => u.UserName.StartsWith(prefix)).ToListAsync();
+                var lowerCasePrefix = prefix.ToLower();
+                var users = await _dbContext.Users
+                                            .Where(u => EF.Functions.Like(u.UserName.ToLower(), lowerCasePrefix + "%"))
+                                            .ToListAsync();
 
                 return users.Select(user => new UserViewModel
                 {

@@ -14,7 +14,8 @@
         <mat-form-field class="full-width" appearance="outline">
           <mat-label>Usuario</mat-label>
           <input formControlName="userName" matInput placeholder="Introduzca el nombre de usuario" required />
-          <mat-error *ngIf="loginForm.get('userName')?.invalid">El usuario es requerido</mat-error>
+          <mat-error *ngIf="loginForm.get('userName')?.hasError('required')">El usuario es requerido</mat-error>
+          <mat-error *ngIf="loginForm.get('userName')?.hasError('pattern')">El usuario debe contener solo letras</mat-error>
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="outline">
@@ -23,12 +24,10 @@
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'" [attr.aria-pressed]="hide">
             <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
           </button>
-          <mat-error *ngIf="loginForm.get('password')?.invalid">La contraseña es requerida</mat-error>
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">La contraseña es requerida</mat-error>
         </mat-form-field>
 
-        <div class="forget-password">
-          <a class="aLink" href="/forgot-password">¿Olvidaste tu contraseña?</a>
-        </div>
+        <mat-error *ngIf="errorMessage">{{ errorMessage }}</mat-error>
 
         <button mat-flat-button color="primary" class="full-width">Iniciar Sesión</button>
       </form>

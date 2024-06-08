@@ -1,3 +1,7 @@
+<div *ngIf="!allImagesLoaded" class="loading-animation">
+  <div class="spinner"></div>
+</div>
+
 <div class="profile-container">
   <div class="profile-header">
     <img [src]="profileImageUrl" alt="Foto de perfil" class="profile-image">
@@ -27,33 +31,49 @@
       <span class="stat-label">Publicaciones</span>
     </div>
   </div>
-</div>
+  <div class="divider"></div>
 
-<div *ngIf="userPosts">
-  <div *ngFor="let post of flattenAndSortPosts(userPosts)" class="post-card">
-    <div class="post-header">
-      <div>
-        <img [src]="profileImageUrl" alt="Foto de perfil" class="post-header-avatar">
+  <div *ngIf="userPosts && userPosts.posts && userPosts.posts.length > 0; else noPosts">
+    <div *ngFor="let post of pagedPosts; let last = last" class="post-card" [style.marginBottom.px]="last ? 100 : 20" #firstPost>
+      <div class="post-header">
+        <div>
+          <img [src]="profileImageUrl" alt="Foto de perfil" class="post-header-avatar">
+        </div>
+        <div class="post-header-info">
+          <h3>{{ post.userName }}</h3>
+          <p>{{ post.description }}</p>
+        </div>
       </div>
-      <div class="post-header-info">
-        <h3>{{ post.userName }}</h3>
-        <p>{{ post.description }}</p>
+      <div class="post-content">
+        <p>{{ post.text }}</p>
+        <img *ngIf="postImages[post.id]" [src]="postImages[post.id]" alt="Imagen del post" class="post-image">
+        <p>{{ formatDate(post.creationDate) }}</p>
+      </div>
+      <div class="post-actions">
+        <button class="action-button" (click)="toggleLike(post)">
+          <mat-icon>{{ post.userHasLiked ? 'thumb_up' : 'thumb_up_off_alt' }}</mat-icon>
+          <span *ngIf="post.likes.length > 0"> ({{ post.likes.length }})</span>
+        </button>
+        <button class="action-button" (click)="openCommentsDialog(post)">
+          <mat-icon>comment</mat-icon>
+          <span *ngIf="post.comments.length > 0"> ({{ post.comments.length }})</span>
+        </button>
       </div>
     </div>
-    <div class="post-content">
-      <p>{{ post.text }}</p>
-      <img *ngIf="postImages[post.id]" [src]="postImages[post.id]" alt="Imagen del post" class="post-image">
-      <p>{{ formatDate(post.creationDate) }}</p>
-    </div>
-    <div class="post-actions">
-      <button class="action-button" (click)="toggleLike(post)">
-        <mat-icon>{{ post.userHasLiked ? 'thumb_up' : 'thumb_up_off_alt' }}</mat-icon>
-        <span *ngIf="post.likes.length > 0"> ({{ post.likes.length }})</span>
-      </button>
-      <button class="action-button" (click)="openCommentsDialog(post)">
-        <mat-icon>comment</mat-icon>
-        <span *ngIf="post.comments.length > 0"> ({{ post.comments.length }})</span>
-      </button>
+    <div *ngIf="userPosts.posts.length > 10" class="pagination-controls">
+      <button (click)="previousPage()" [disabled]="currentPage === 1">Anterior</button>
+      <span>Página {{currentPage}}</span>
+      <button (click)="nextPage()">Siguiente</button>
     </div>
   </div>
+
+  <ng-template #noPosts>
+    <div class="no-posts-container">
+      <div class="no-posts-content">
+        <img src="../../../assets/flags/sadRobot.png" alt="No hay publicaciones" class="no-posts-image">
+        <h2>{{ user?.userName }} no tiene ninguna publicación disponible</h2>
+        <p>¡Anima a {{ user?.userName }} a explorar, compartir y conectarse con el mundo!</p>
+      </div>
+    </div>
+  </ng-template>
 </div>

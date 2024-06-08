@@ -1,8 +1,18 @@
-<div *ngIf="userPosts">
-  <div *ngFor="let post of flattenAndSortPosts(userPosts)" class="post-card">
+<div *ngIf="!allImagesLoaded" class="loading-animation">
+  <div class="spinner"></div>
+</div>
+
+<div *ngIf="userPosts && userPosts.length > 0; else noPosts">
+  <div class="welcome-section">
+    <h1>Descubre las publicaciones de quienes sigues</h1>
+    <p>Explora y disfruta del contenido creado por las personas que te interesan.</p>
+  </div>
+
+  
+  <div *ngFor="let post of pagedPosts; let last = last" class="post-card" [style.marginBottom.px]="last ? 100 : 20" #firstPost>
     <div class="post-header">
       <div>
-        <img [src]="profileImages[post.userName]" alt="Foto de perfil" class="post-header-avatar">
+        <img [src]="profileImages[post.userName]" alt="Foto de perfil" class="post-header-avatar" (click)="navigateToOtherProfile(post.userName)">
       </div>
       <div class="post-header-info">
         <h3>{{ post.userName }}</h3>
@@ -25,4 +35,19 @@
       </button>
     </div>
   </div>
+  <div *ngIf="userPosts.length > 10" class="pagination-controls">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Anterior</button>
+    <span>Página {{currentPage}}</span>
+    <button (click)="nextPage()">Siguiente</button>
+  </div>
 </div>
+<ng-template #noPosts>
+  <div class="no-posts-container">
+    <div class="welcome-section">
+      <img src="../../../../assets/flags/invit-Photoroom.png" alt="Invite friends" class="no-posts-image">
+      <h1>¡Tu feed está vacío!</h1>
+      <p>Sigue a tus amigos y familiares</p>
+      <p>Descubre nuevos intereses</p>
+    </div>
+  </div>
+</ng-template>

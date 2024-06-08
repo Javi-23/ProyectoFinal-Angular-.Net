@@ -1,8 +1,17 @@
+<div *ngIf="!allImagesLoaded && !userPosts" class="loading-animation">
+  <div class="spinner"></div>
+</div>
+
+<div class="welcome-section" *ngIf="showWelcomeSection">
+  <h1>Bienvenido a nuestra comunidad</h1>
+  <p>¡Explora las publicaciones del resto de usuarios!</p>
+</div>
+
 <div *ngIf="userPosts">
-  <div *ngFor="let post of flattenAndSortPosts(userPosts)" class="post-card">
+  <div *ngFor="let post of pagedPosts; let last = last" class="post-card" [style.marginBottom.px]="last ? 100 : 20" #firstPost>
     <div class="post-header">
       <div>
-        <img [src]="profileImages[post.userName]" alt="Foto de perfil" class="post-header-avatar">
+        <img [src]="profileImages[post.userName]" alt="Foto de perfil" class="post-header-avatar" (click)="navigateToOtherProfile(post.userName)">
       </div>
       <div class="post-header-info">
         <h3>{{ post.userName }}</h3>
@@ -24,5 +33,10 @@
         <span *ngIf="post.comments.length > 0"> ({{ post.comments.length }})</span>
       </button>
     </div>
+  </div>
+  <div *ngIf="userPosts.length > 10" class="pagination-controls">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Anterior</button>
+    <span>Página {{currentPage}}</span>
+    <button (click)="nextPage()">Siguiente</button>
   </div>
 </div>

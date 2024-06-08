@@ -12,8 +12,101 @@
     background-color: #4e7fd4;
   }
 
+  .divider {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 20px 0;
+  }
+
   .post-image {
     max-width: 100%;
     border-radius: 8px;
     margin-top: 15px;
+  }
+
+  .profile-stats .stat-label {
+    font-size: 20px;
+  }
+  
+  .no-posts-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .no-posts-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .no-posts-content {
+    max-width: 400px;
+  }
+  
+  .no-posts-image {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .no-posts-content h2 {
+    margin: 10px 0;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .no-posts-content p {
+    color: #757575;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 480px) {
+    .profile-stats .stat-label {
+      font-size: 11px;
+    }
+  
+    .create-post-button {
+      margin-bottom: 40%;
+    }
+  
+    .post-actions {
+      .action-button {  
+        width: 40px;
+        font-size: 14px; 
+        padding: 5px 10px;
+    
+        mat-icon {
+          font-size: 16px;
+          margin-right: 5px;
+        }
+  
+        span {
+          font-size: 10px;
+        }
+      }
+    }
+  
+    .post-card {
+      .post-header-info {
+        h3 {
+          font-size: 12px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+  
+      .post-header-avatar {
+        width: 30px;
+        height: 30px; 
+      }
+    }
   }

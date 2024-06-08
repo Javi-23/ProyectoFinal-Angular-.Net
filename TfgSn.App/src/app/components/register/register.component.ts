@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AutheticationService } from '../../services/authetication.service';
-import { Login } from '../../models/login';
-import { JwtAuth } from '../../models/jwtAuth';
 import { Register } from 'src/app/models/register';
+import { JwtAuth } from 'src/app/models/jwtAuth';
 
 @Component({
   selector: 'app-register',
@@ -12,9 +11,10 @@ import { Register } from 'src/app/models/register';
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
-  hide = false;
+  hide = true;
   loginDto: Register = new Register();
   jwtDto: JwtAuth = new JwtAuth();
+  errorMessage: string | null = null;
 
   constructor(private fb: FormBuilder, private authService: AutheticationService) {
     this.registerForm = this.fb.group({
@@ -32,9 +32,16 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-    console.log('register');
+    this.errorMessage = null;
+
     const loginData = this.registerForm.value;
-    console.log(loginData);
-    this.authService.register(loginData);
+    this.authService.register(loginData).subscribe({
+      next: (response) => {
+        console.log('Registro exitoso', response);
+      },
+      error: (error) => {
+        this.errorMessage = error;
+      }
+    });
   }
 }

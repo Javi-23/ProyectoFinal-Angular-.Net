@@ -1,0 +1,18 @@
+
+@media (max-width: 350px) {
+    .form-content {
+      margin: 0 auto;
+      max-width: 200px;
+      height: auto;
+
+      .input-field {
+        .full-width {
+            width: 100%;
+            margin: 0;
+            .mat-label {
+                font-size: 2px;
+            }
+        }
+      }
+    }
+  }

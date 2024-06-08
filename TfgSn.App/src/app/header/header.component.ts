@@ -42,9 +42,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.checkCanShowSerachAsOverlay(window.innerWidth);
     this.getUser();
-    this.sharedService.profileImageUpdated$.subscribe(() => {
-      this.downloadProfileImage();
-    });
+    // this.sharedService.profileImageUpdated$.subscribe(() => {
+    //   this.downloadProfileImage();
+    // });
   }
 
   getUser(): void {
@@ -52,11 +52,11 @@ export class HeaderComponent implements OnInit {
       .subscribe(user => {
         this.user = user;
         this.username = this.user?.userName ?? "";
-        if (this.user.image) {
-          this.downloadProfileImage();
-        } else {
-          this.setDefaultProfileImage();
-        }
+        // if (this.user.image) {
+        //   this.downloadProfileImage();
+        // } else {
+        //   this.setDefaultProfileImage();
+        // }
       });
   }
 
@@ -80,7 +80,7 @@ export class HeaderComponent implements OnInit {
   }
 
   redirectUsersComponent(): void {
-    this.router.navigate(['/users']);
+    this.router.navigate(['/main/users']);
   }
   
   search(termine: string) {
@@ -118,24 +118,24 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  downloadProfileImage(): void {
-    this.userService.downloadUploadedImage(this.username)
-      .subscribe({
-        next: (response) => {
-          const blob = new Blob([response.body as BlobPart], { type: 'image/jpeg' });
-          this.profileImageUrl = URL.createObjectURL(blob);
-          this.changeDetectorRef.detectChanges();
-        },
-        error: (error) => {
-          console.error('Error descargando la imagen de perfil', error);
-        },
-      });
-  }
+  // downloadProfileImage(): void {
+  //   this.userService.downloadUploadedImage(this.username)
+  //     .subscribe({
+  //       next: (response) => {
+  //         const blob = new Blob([response.body as BlobPart], { type: 'image/jpeg' });
+  //         this.profileImageUrl = URL.createObjectURL(blob);
+  //         this.changeDetectorRef.detectChanges();
+  //       },
+  //       error: (error) => {
+  //         console.error('Error descargando la imagen de perfil', error);
+  //       },
+  //     });
+  // }
 
-  setDefaultProfileImage(): void {
-    this.profileImageUrl = '../../assets/flags/mifoto.jpg';
-    this.changeDetectorRef.detectChanges();
-  }
+  // setDefaultProfileImage(): void {
+  //   this.profileImageUrl = '../../assets/flags/mifoto.jpg';
+  //   this.changeDetectorRef.detectChanges();
+  // }
 }
 
 

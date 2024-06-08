@@ -15,7 +15,6 @@ namespace ApiTFG.Services.Post
     public class PostService : IPostService
     {
         private readonly IGenericRepository<Posts> _postRepository;
-        private readonly IGenericRepository<Likes> _likeRepository;
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
         private readonly IHttpContextAccessor _httpContextAccessor;

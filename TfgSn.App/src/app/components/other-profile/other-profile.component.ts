@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { UserAndPostDto } from 'src/app/models/UserAndPost/UserAndPostDto';
 import { UserpostService } from 'src/app/services/user-post/userpost.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -29,6 +29,12 @@ export class OtherProfileComponent {
   usernameAuthenticated: string = "";
   profileImageUrl: string | null = null;
   postImages: { [postId: number]: string } = {};
+  allImagesLoaded = false;
+  currentPage: number = 1;
+  postsPerPage: number = 10;
+  pagedPosts: PostDto[] = [];
+
+  @ViewChildren('firstPost') firstPost: QueryList<ElementRef> | undefined;
 
   constructor(private userpostService: UserpostService, private userService: UserService, 
               private followService: FollowsService, private dialog: MatDialog, private route: ActivatedRoute, 
@@ -74,8 +80,19 @@ export class OtherProfileComponent {
       .subscribe(posts => {
         this.userPosts = posts;
         this.downloadPostImages(this.userPosts.posts);
+        this.updatePagedPosts(); 
       });
   }
+
+  updatePagedPosts(): void {
+    if (this.userPosts) {
+      const allPosts = this.flattenAndSortPosts(this.userPosts);
+      const startIndex = (this.currentPage - 1) * this.postsPerPage;
+      const endIndex = startIndex + this.postsPerPage;
+      this.pagedPosts = allPosts.slice(startIndex, endIndex);
+    }
+  }
+
 
   getFollowedUsers(): void {
     this.followService.getFollowed(this.username)
@@ -212,6 +229,12 @@ export class OtherProfileComponent {
   }
 
   downloadPostImages(posts: PostDto[]): void {
+    let loadedImages = 0;
+    const totalImages = posts.filter(post => post.image).length;
+    if (totalImages === 0) {
+        this.allImagesLoaded = true;
+        return;
+    }
     posts.forEach((post: PostDto) => {
       if (post.image) {
         this.postService.downloadUploadedImage(post.id)
@@ -219,13 +242,46 @@ export class OtherProfileComponent {
             next: (response) => {
               const blob = new Blob([response as BlobPart], { type: 'image/jpeg' });
               this.postImages[post.id] = URL.createObjectURL(blob);
+              loadedImages++;
+
+              if (loadedImages === totalImages) {
+                this.allImagesLoaded = true;
+              }
+              
               this.changeDetectorRef.detectChanges();
             },
             error: (error) => {
               console.error('Error descargando la imagen del post', error);
+              loadedImages++;
+
+              if (loadedImages === totalImages) {
+                this.allImagesLoaded = true;
+              }
+              
+              this.changeDetectorRef.detectChanges();
             },
           });
       }
     });
+  }
+
+  nextPage(): void {
+    this.currentPage++;
+    this.updatePagedPosts();
+    this.scrollToTop();
+  }
+  
+  previousPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.updatePagedPosts();
+      this.scrollToTop();
+    }
+  }
+
+  scrollToTop(): void {
+    if (this.firstPost && this.firstPost.first) {
+      this.firstPost.first.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }

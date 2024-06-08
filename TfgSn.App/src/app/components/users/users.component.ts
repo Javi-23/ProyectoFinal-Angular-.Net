@@ -21,7 +21,7 @@ export class UsersComponent {
   }
 
   navigateToOtherProfile(username: string): void {
-    this.router.navigateByUrl(`/other-profile/${username}`);
+    this.router.navigateByUrl(`/main/other-profile/${username}`);
   }
 }
 

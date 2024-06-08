@@ -26,8 +26,27 @@ namespace ApiTFG.Services
             _config = config;
         }
 
-        public async Task<bool> RegisterUser(LoginUser user)
+        public async Task<IdentityResult> RegisterUser(LoginUser user)
         {
+            var existingUser = await _userManager.FindByNameAsync(user.UserName);
+            if (existingUser != null)
+            {
+                return IdentityResult.Failed(new IdentityError { Description = "El nombre de usuario ya está en uso." });
+            }
+
+            var existingEmail = await _userManager.FindByEmailAsync(user.Email);
+            if (existingEmail != null)
+            {
+                return IdentityResult.Failed(new IdentityError { Description = "El correo electrónico ya está en uso." });
+            }
+
+            var passwordValidator = new PasswordValidator<AppUser>();
+            var passwordResult = await passwordValidator.ValidateAsync(_userManager, null, user.Password);
+            if (!passwordResult.Succeeded)
+            {
+                return passwordResult;
+            }
+
             var appUser = new AppUser
             {
                 UserName = user.UserName,
@@ -36,7 +55,7 @@ namespace ApiTFG.Services
             };
 
             var result = await _userManager.CreateAsync(appUser, user.Password);
-            return result.Succeeded;
+            return result;
         }
 
         public async Task<bool> Login(LoginDTO user)

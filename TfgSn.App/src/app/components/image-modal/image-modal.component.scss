@@ -83,3 +83,23 @@ $custom-file-input-color: #222;
 .modal button:hover {
   background-color: #222;
 }
+
+@media (max-width: 460px) {
+  .modal {
+    padding: 0.5rem; /* Reducir aún más el padding para hacer el modal más compacto */
+  }
+
+  .modal h2 {
+    font-size: 0.875rem; /* Reducir el tamaño del título */
+  }
+
+  .modal input[type="file"],
+  .modal button {
+    padding: 0.25rem 0.5rem; /* Reducir el padding de los botones y los inputs */
+    font-size: 0.75rem; /* Reducir aún más el tamaño de fuente de los botones e inputs */
+  }
+
+  .modal input[type="file"]::after {
+    padding: 0.25rem 0.5rem; /* Reducir el padding del botón Examinar */
+  }
+}

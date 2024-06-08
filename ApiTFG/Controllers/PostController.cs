@@ -1,5 +1,5 @@
-﻿using ApiTFG.Dtos;
-using ApiTFG.Models;
+﻿using ApiTFG.Models;
+using ApiTFG.Dtos;
 using ApiTFG.Requests;
 using ApiTFG.Services;
 using ApiTFG.Services.Post;
