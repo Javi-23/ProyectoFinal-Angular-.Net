@@ -13,6 +13,6 @@ services:
     image: tfgsn-app
     build:
       context: ./TfgSn.App
-      dockerfile: Dockerfile
+      dockerfile: DockerFile
     ports:
       - "80:80"
