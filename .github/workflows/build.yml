@@ -44,7 +44,7 @@ jobs:
           username: ${{ secrets.AZURE_VM_USERNAME }}
           password: ${{ secrets.AZURE_VM_PASSWORD }}
           script: |
-            cd ProyectoFinal-Angular-.Net
-            git pull origin main
-            sudo docker-compose pull
-            sudo docker-compose up -d
+              cd ProyectoFinal-Angular-.Net
+              git pull origin main
+              sudo docker-compose build
+              sudo docker-compose up -d
