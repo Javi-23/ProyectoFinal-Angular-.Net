@@ -6,7 +6,7 @@ RUN npm run build --prod
 
 FROM node:16-alpine
 WORKDIR /app
-COPY --from=build /app/dist/tfg-sn.app /app
+COPY --from=build /app/dists/tfg-sn.app /app
 COPY server.js /app/server.js
 COPY package*.json /app/
 
