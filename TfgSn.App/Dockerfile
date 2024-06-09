@@ -1,9 +1,6 @@
-FROM node:16.14-alpine AS build
-WORKDIR /dist/src/app
-RUN npm cache clean --force
-
+FROM node:16 AS build
+WORKDIR /app
 COPY . .
-
 RUN npm install
 RUN npm run build --prod
 
