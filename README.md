@@ -5,3 +5,7 @@
         MySQL, .NET, Angular, Despliegue en máquina virtual de Azure, Automatización con GitHub Actions
     </span>
 </p>
+
+## Enlace a los repositorios
+1. [Backend .NET](ApiTFG/README.md)
+2. [Fronted Angular](TfgSn.App/README.md)
