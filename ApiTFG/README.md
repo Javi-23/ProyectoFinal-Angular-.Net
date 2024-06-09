@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Índice</title>
-</head>
-<body>
 
 <h1 style="text-align: center;">Esta API se ha desarrollado con .NET</h1>
 
