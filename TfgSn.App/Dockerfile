@@ -4,13 +4,8 @@ COPY . .
 RUN npm install
 RUN npm run build --prod
 
-FROM node:16-alpine
-WORKDIR /app
-COPY --from=build /app/dists/tfg-sn.app /app
-COPY server.js /app/server.js
-COPY package*.json /app/
-
-RUN npm install --only=production
-
+FROM nginx:alpine
+COPY --from=build /app/dists/tfg-sn.app /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
-CMD ["node", "server.js"]
+CMD ["nginx", "-g", "daemon off;"]
