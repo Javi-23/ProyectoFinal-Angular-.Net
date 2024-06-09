@@ -8,5 +8,5 @@
 6. [Tecnologías y Dependencias](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Tecnolog%C3%ADas)
 7. [Guía de Instalación](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Gu%C3%ADa-de-instalaci%C3%B3n)
 8. [Guía de Uso](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Guia-de-uso)
-9.[Agradecimientos](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Agradecimientos)
+9. [Agradecimientos](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Agradecimientos)
 10. [Conclusiones](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Conclusiones)
