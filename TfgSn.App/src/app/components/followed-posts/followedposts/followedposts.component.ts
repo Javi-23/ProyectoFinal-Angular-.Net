@@ -23,6 +23,7 @@ export class FollowedpostsComponent implements OnInit {
   currentPage: number = 1;
   itemsPerPage: number = 10;
   pagedPosts: PostDto[] = [];
+  showWelcomeSection: boolean = false;
 
   @ViewChildren('firstPost') firstPost: QueryList<ElementRef> | undefined;
 
@@ -45,7 +46,7 @@ export class FollowedpostsComponent implements OnInit {
       this.userPosts = posts;
       this.loadProfileImages(posts);
       this.updatePagedPosts();
-      console.log(posts);
+      this.showWelcomeSection = true;
     });
   }
 

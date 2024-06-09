@@ -2,7 +2,7 @@
   <div class="spinner"></div>
 </div>
 
-<div class="profile-container">
+<div class="profile-container" *ngIf="showWelcomeSection">
   <div class="profile-header">
     <img [src]="profileImageUrl" alt="Foto de perfil" class="profile-image" (click)="UploadImageModal()">
     <div class="profile-info">

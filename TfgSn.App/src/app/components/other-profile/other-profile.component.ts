@@ -33,6 +33,7 @@ export class OtherProfileComponent {
   currentPage: number = 1;
   postsPerPage: number = 10;
   pagedPosts: PostDto[] = [];
+  showWelcomeSection: boolean = false;
 
   @ViewChildren('firstPost') firstPost: QueryList<ElementRef> | undefined;
 
@@ -81,6 +82,7 @@ export class OtherProfileComponent {
         this.userPosts = posts;
         this.downloadPostImages(this.userPosts.posts);
         this.updatePagedPosts(); 
+        this.showWelcomeSection = true;
       });
   }
 

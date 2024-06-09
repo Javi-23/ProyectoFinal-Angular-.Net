@@ -41,8 +41,8 @@
     <button (click)="nextPage()">Siguiente</button>
   </div>
 </div>
-<ng-template #noPosts>
-  <div class="no-posts-container">
+<ng-template #noPosts >
+  <div class="no-posts-container" *ngIf="showWelcomeSection">
     <div class="welcome-section">
       <img src="../../../../assets/flags/invit-Photoroom.png" alt="Invite friends" class="no-posts-image">
       <h1>¡Tu feed está vacío!</h1>
