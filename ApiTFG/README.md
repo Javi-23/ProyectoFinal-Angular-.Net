@@ -1,5 +1,5 @@
 
-<h1 style="text-align: center;">Esta API se ha desarrollado con .NET</h1>
+<h1 style="text-align: center;">Desarrollado con .Net</h1>
 
 ## Indice
 
