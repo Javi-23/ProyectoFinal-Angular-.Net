@@ -55,7 +55,7 @@
         <mat-icon>{{ post.userHasLiked ? 'thumb_up' : 'thumb_up_off_alt' }}</mat-icon>
         <span *ngIf="post.likes.length > 0"> ({{ post.likes.length }})</span>
       </button>
-      <button class="action-button post">
+      <button class="action-button post" (click)="openCommentsDialog(post)">
         <mat-icon>comment</mat-icon>
         <span *ngIf="post.comments.length > 0"> ({{ post.comments.length }})</span>
       </button>
