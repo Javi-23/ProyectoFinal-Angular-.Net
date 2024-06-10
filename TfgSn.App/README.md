@@ -1,27 +1,17 @@
-# TfgSnApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+<h1 style="text-align: center;">Desarrollado con .Net</h1>
 
-## Development server
+## Indice
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. [Introducción](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Introducci%C3%B3n-%E2%80%90)
+2. [Motivación](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Motivaci%C3%B3n-%E2%80%90)
+3. [Objetivos](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Objetivos)
+4. [Justificación](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Justificaci%C3%B3n-%E2%80%90)
+5. [Funcionalidades](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Funcionalidades)
+6. [Tecnologías y Dependencias](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Tecnolog%C3%ADas-%E2%80%90)
+7. [Guía de Instalación](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Gu%C3%ADa-de-instalaci%C3%B3n-%E2%80%90)
+8. [Guía de Uso](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Gu%C3%ADa-de-uso-%E2%80%90)
+9. [Pantallas](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Pantallas)
+10. [Agradecimientos](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Agradecimientos)
+11. [Conclusiones](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Conclusiones-%E2%80%90)
+12. [Licencias](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Licencias)
