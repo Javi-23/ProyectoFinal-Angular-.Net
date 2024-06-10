@@ -6,6 +6,8 @@
     </span>
 </p>
 
-## Enlace a los repositorios
+## Enlace a la documentación
 1. [Backend .NET](ApiTFG/README.md)
 2. [Fronted Angular](TfgSn.App/README.md)
+3. [Diagramas UML](https://adorable-sale-af3.notion.site/Diagramas-UML-b8667558ee534be9bcceb112768dc262)
+4. [Contacto](https://github.com/Javi-23/ProyectoFinal-Angular-.Net/wiki/Contaco)
