@@ -16,6 +16,7 @@ export class PostService {
   unLikePostUrl = 'Post/unlike-post';
   downloadUploadedImageUrl = 'Post/download-uploaded-image';
   deletePostUrl = 'Post/delete-post';
+  deleteCommentUrl = 'Post/delete-comment';
 
   constructor(private http: HttpClient) { }
 
@@ -45,6 +46,11 @@ export class PostService {
 
   deletePost(postId: number): Observable<boolean> {
     const url = `${environment.apiUrl}/${this.deletePostUrl}/${postId}`;
+    return this.http.delete<boolean>(url);
+  }
+
+  deleteComment(commentId: number): Observable<boolean> {
+    const url = `${environment.apiUrl}/${this.deleteCommentUrl}/${commentId}`;
     return this.http.delete<boolean>(url);
   }
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AutheticationService } from '../../services/authetication.service';
-import { Register } from 'src/app/models/register';
-import { JwtAuth } from 'src/app/models/jwtAuth';
+import { Register } from '../../models/register';  // Asegúrate de que este modelo existe
 
 @Component({
   selector: 'app-register',
@@ -11,12 +11,15 @@ import { JwtAuth } from 'src/app/models/jwtAuth';
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
-  hide = true;
-  loginDto: Register = new Register();
-  jwtDto: JwtAuth = new JwtAuth();
-  errorMessage: string | null = null;
+  hide = false;
+  registerDto: Register = new Register();
+  errorMessage: string = '';
 
-  constructor(private fb: FormBuilder, private authService: AutheticationService) {
+  constructor(
+    private fb: FormBuilder, 
+    private authService: AutheticationService, 
+    private router: Router
+  ) {
     this.registerForm = this.fb.group({
       userName: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+$/)]],
       email: ['', [Validators.required, Validators.email]],
@@ -31,17 +34,18 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
-
-    this.errorMessage = null;
-
-    const loginData = this.registerForm.value;
-    this.authService.register(loginData).subscribe({
-      next: (response) => {
-        console.log('Registro exitoso', response);
+    const registerData = this.registerForm.value;
+    this.authService.register(registerData).subscribe({
+      next: () => {
+        this.router.navigate(['']); 
       },
       error: (error) => {
         this.errorMessage = error;
       }
     });
+  }
+  
+  togglePasswordVisibility() {
+    this.hide = !this.hide;
   }
 }

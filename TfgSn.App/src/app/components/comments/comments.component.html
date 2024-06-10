@@ -1,14 +1,21 @@
 <div class="dialog-card">
   <div class="post-content">
-    <h2>{{post.userName}}</h2>
+    <h2>{{ post.userName }}</h2>
     <p>{{ post.text }}</p>
     <p>{{ post.creationDate }}</p>
     <h2 class="comments-heading">Comments</h2>
     <div class="comments-container" *ngIf="post.comments && post.comments.length > 0">
       <div class="scrollable-comments">
         <div class="comment" *ngFor="let comment of post.comments">
-          <p><strong>{{ comment.userName }}</strong>: {{ comment.text }}</p>
-          <p class="comment-date">{{ formatDate(comment.creationDate) }}</p>
+          <div class="comment-content">
+            <div class="comment-text">
+              <p><strong>{{ comment.userName }}</strong>: {{ comment.text }}</p>
+              <p class="comment-date">{{ formatDate(comment.creationDate) }}</p>
+            </div>
+            <button *ngIf="comment.userId === userId" mat-icon-button (click)="deleteComment(comment)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
         </div>
       </div>
     </div>
