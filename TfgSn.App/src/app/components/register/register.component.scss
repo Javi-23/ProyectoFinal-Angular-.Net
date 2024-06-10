@@ -1,3 +1,17 @@
+button[mat-flat-button] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #6bffa4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: #5dfa99;
+  }
+}
 
 @media (max-width: 350px) {
     .form-content {

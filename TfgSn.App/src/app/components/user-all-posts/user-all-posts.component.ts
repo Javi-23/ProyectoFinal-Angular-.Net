@@ -207,6 +207,6 @@ export class UserAllPostsComponent implements OnInit {
   }
 
   navigateToOtherProfile(userName: string): void {
-    this.router.navigate(['/profile', userName]);
+    this.router.navigate(['/main/other-profile', userName]);
   }
 }

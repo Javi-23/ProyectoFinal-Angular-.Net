@@ -9,10 +9,6 @@ export const userItems = [
         label: 'Ajustes'
     },
     {
-        icon: 'far fa-unlock-alt',
-        label: 'Ver imagen'
-    },
-    {
         icon: 'far fa-power-off',
         label: 'Cerrar Sesión'
     },

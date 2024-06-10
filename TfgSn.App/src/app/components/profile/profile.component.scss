@@ -48,7 +48,7 @@
 }
 
 .create-post-button {
-  background-color: #77d8cb;
+  background-color: #5dfa99;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -59,7 +59,7 @@
 }
 
 .create-post-button:hover {
-  background-color: #0056b3;
+  background-color: #6bffa4;
 }
 
 .divider {
@@ -71,6 +71,10 @@
 
 .profile-stats .stat-label {
   font-size: 20px;
+}
+
+.delete {
+  background-color: red;
 }
 
 @media screen and (max-width: 480px) {

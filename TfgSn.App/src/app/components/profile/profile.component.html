@@ -57,7 +57,7 @@
         <mat-icon>comment</mat-icon>
         <span *ngIf="post.comments.length > 0"> ({{ post.comments.length }})</span>
       </button>
-      <button class="action-button post" (click)="confirmDeletePost(post.id)">
+      <button class="action-button post delete" (click)="confirmDeletePost(post.id)">
         <mat-icon>delete</mat-icon>
       </button>
     </div>

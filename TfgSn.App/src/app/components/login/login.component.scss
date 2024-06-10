@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #007bff;
+  background-color: #6bffa4;
   color: white;
   padding: 2em;
   border-radius: 10px;
@@ -98,14 +98,14 @@ button[mat-flat-button] {
   width: 100%;
   padding: 12px;
   font-size: 16px;
-  background: #007bff;
+  background-color: #6bffa4;
   color: #fff;
   border: none;
   border-radius: 5px;
   transition: background 0.3s ease;
 
   &:hover {
-    background: #0056b3;
+    background-color: #5dfa99;
   }
 }
 

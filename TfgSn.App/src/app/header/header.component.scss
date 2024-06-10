@@ -115,7 +115,8 @@
                     .user-avatar {
                         margin-bottom: -4px;
                         border-radius: 50px;
-                        box-shadow: 0 0 15px rgb(35 35 35 / 15%);
+                        box-shadow: 0 0 15px rgba(105, 105, 105, 0.15);
+                        background-color: #495057;
                         cursor: pointer;
                     }
                     

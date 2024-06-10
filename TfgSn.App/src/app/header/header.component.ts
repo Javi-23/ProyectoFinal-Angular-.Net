@@ -41,24 +41,24 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkCanShowSerachAsOverlay(window.innerWidth);
-    this.getUser();
+    // this.getUser();
     // this.sharedService.profileImageUpdated$.subscribe(() => {
     //   this.downloadProfileImage();
     // });
   }
 
-  getUser(): void {
-    this.userService.getUser()
-      .subscribe(user => {
-        this.user = user;
-        this.username = this.user?.userName ?? "";
-        // if (this.user.image) {
-        //   this.downloadProfileImage();
-        // } else {
-        //   this.setDefaultProfileImage();
-        // }
-      });
-  }
+  // getUser(): void {
+  //   this.userService.getUser()
+  //     .subscribe(user => {
+  //       this.user = user;
+  //       this.username = this.user?.userName ?? "";
+  //       // if (this.user.image) {
+  //       //   this.downloadProfileImage();
+  //       // } else {
+  //       //   this.setDefaultProfileImage();
+  //       // }
+  //     });
+  // }
 
 
   getHeadClass(): string {

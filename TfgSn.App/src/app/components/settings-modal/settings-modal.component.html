@@ -1,20 +1,12 @@
 <div class="settings-modal">
-    <h2>Ajustes</h2>
-    <div *ngIf="!selectedOption">
-      <button (click)="selectOption('description')">Cambiar Descripción</button>
-      <button (click)="selectOption('password')">Cambiar Contraseña</button>
-    </div>
-    <div *ngIf="selectedOption === 'description'">
-      <h3>Cambiar Descripción</h3>
-      <input type="text" [(ngModel)]="newDescription" placeholder="Nueva descripción">
-      <button (click)="resetSelection()">Cancelar</button>
-      <button (click)="updateDescription()">Guardar</button>
-    </div>
-    <div *ngIf="selectedOption === 'password'">
-      <h3>Cambiar Contraseña</h3>
-      <input type="password" placeholder="Contraseña actual">
-      <input type="password" placeholder="Nueva contraseña">
-      <button (click)="resetSelection()">Cancelar</button>
-      <button>Guardar</button>
-    </div>
+  <h2>Ajustes</h2>
+  <div *ngIf="!selectedOption">
+    <button (click)="selectOption('description')">Cambiar Descripción</button>
   </div>
+  <div *ngIf="selectedOption === 'description'">
+    <h3>Cambiar Descripción</h3>
+    <input type="text" [(ngModel)]="newDescription" placeholder="Nueva descripción">
+    <button (click)="resetSelection()">Cancelar</button>
+    <button (click)="updateDescription()">Guardar</button>
+  </div>
+</div>

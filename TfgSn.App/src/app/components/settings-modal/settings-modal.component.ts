@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { UserService } from 'src/app/services/user/user.service';
   templateUrl: './settings-modal.component.html',
   styleUrls: ['./settings-modal.component.scss']
 })
-export class SettingsModalComponent  {
+export class SettingsModalComponent {
 
   constructor(private userService: UserService) {}
 
@@ -27,6 +27,7 @@ export class SettingsModalComponent  {
         next: response => {
           console.log('Descripción actualizada con éxito', response);
           this.resetSelection();
+          window.location.reload();
         },
         error: error => {
           console.error('Error actualizando la descripción', error);
