@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|c:\\users\\javi\\source\\repos\\proyectofinal-angular\u002B.net\\apitfg\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\cygwin64\\home\\Javi\\combined.pem||{8B382828-6202-11D1-8870-0000F87579D2}"
@@ -62,148 +58,152 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:dtos\\likesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\repository\\usertofollowrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:repository\\usertofollowrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\post\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:services\\post\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\repository\\usertofollowrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:repository\\usertofollowrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\controllers\\userandpostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:controllers\\userandpostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\post\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:services\\post\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\apitfg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:apitfg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\controllers\\userandpostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:controllers\\userandpostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:Dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\apitfg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:apitfg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\persistence\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:persistence\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\persistence\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:persistence\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\apitfg.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:apitfg.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\apitfg.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:apitfg.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\requests\\createupdatepostrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:requests\\createupdatepostrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\requests\\createupdatepostrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:requests\\createupdatepostrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\dependencies\\dependecies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:dependencies\\dependecies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\user\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:services\\user\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\dependencies\\dependecies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:dependencies\\dependecies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\user\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:services\\user\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\user\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:services\\user\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\authservicei.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:services\\authservicei.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\user\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:services\\user\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\authservicei.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:services\\authservicei.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Migrations\\20240603181450_UpdatedNamesAtributtes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:Migrations\\20240603181450_UpdatedNamesAtributtes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\post\\ipostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:services\\post\\ipostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Migrations\\20240603181450_UpdatedNamesAtributtes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240603181450_UpdatedNamesAtributtes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\userandpostservice\\userandpostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:services\\userandpostservice\\userandpostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\post\\ipostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:services\\post\\ipostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Migrations\\20240602163752_ImagePosts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:Migrations\\20240602163752_ImagePosts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\userandpostservice\\userandpostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:services\\userandpostservice\\userandpostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\userandpostservice\\iuserandpostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:services\\userandpostservice\\iuserandpostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Migrations\\20240602163752_ImagePosts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240602163752_ImagePosts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\utils\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:utils\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\userandpostservice\\iuserandpostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:services\\userandpostservice\\iuserandpostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\requests\\tokenrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:requests\\tokenrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\utils\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:utils\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\requests\\tokenrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:requests\\tokenrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\exceptions\\genericexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:exceptions\\genericexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\exceptions\\userandpostexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:exceptions\\userandpostexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\exceptions\\genericexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:exceptions\\genericexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\exceptions\\postexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:exceptions\\postexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\exceptions\\userandpostexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:exceptions\\userandpostexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\exceptions\\userexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:exceptions\\userexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\exceptions\\postexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:exceptions\\postexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\usertofollow\\iusertofollowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:services\\usertofollow\\iusertofollowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\exceptions\\userexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:exceptions\\userexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\controllers\\usertofollowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:controllers\\usertofollowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\usertofollow\\iusertofollowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:services\\usertofollow\\iusertofollowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\usertofollow\\usertofollowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:services\\usertofollow\\usertofollowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\controllers\\usertofollowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:controllers\\usertofollowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\utils\\jwtutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:utils\\jwtutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\services\\usertofollow\\usertofollowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:services\\usertofollow\\usertofollowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\utils\\userutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1D52E0A-E80B-49C0-B8A2-C01C41C5883C}|ApiTFG.csproj|solutionrelative:utils\\userutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\utils\\jwtutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:utils\\jwtutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\utils\\userutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:utils\\userutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -253,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 14,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Repository\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repository\\UserRepository.cs",
@@ -265,7 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 15,
               "Title": "PostController.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Controllers\\PostController.cs",
               "RelativeDocumentMoniker": "Controllers\\PostController.cs",
@@ -283,14 +283,14 @@
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAGAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-06-07T10:31:09.722Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 16,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -298,12 +298,11 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:30:09.988Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T11:30:09.988Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "UserToFollowRepository.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Repository\\UserToFollowRepository.cs",
               "RelativeDocumentMoniker": "Repository\\UserToFollowRepository.cs",
@@ -399,7 +398,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "combined.pem",
               "DocumentMoniker": "C:\\cygwin64\\home\\Javi\\combined.pem",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\cygwin64\\home\\Javi\\combined.pem",
@@ -447,7 +446,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Posts.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Models\\Posts.cs",
               "RelativeDocumentMoniker": "Models\\Posts.cs",
@@ -459,7 +458,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "AppUser.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Models\\AppUser.cs",
               "RelativeDocumentMoniker": "Models\\AppUser.cs",
@@ -543,7 +542,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Likes.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Models\\Likes.cs",
               "RelativeDocumentMoniker": "Models\\Likes.cs",
@@ -555,7 +554,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Comment.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Models\\Comment.cs",
               "RelativeDocumentMoniker": "Models\\Comment.cs",
@@ -567,7 +566,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "LoginUser.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Models\\LoginUser.cs",
               "RelativeDocumentMoniker": "Models\\LoginUser.cs",
@@ -579,7 +578,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "UserToFollow.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Models\\UserToFollow.cs",
               "RelativeDocumentMoniker": "Models\\UserToFollow.cs",
@@ -627,7 +626,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "PostDTO.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Dtos\\PostDTO.cs",
               "RelativeDocumentMoniker": "Dtos\\PostDTO.cs",
@@ -675,7 +674,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "UserAndPostDto.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Dtos\\UserAndPostDto.cs",
               "RelativeDocumentMoniker": "Dtos\\UserAndPostDto.cs",
@@ -687,7 +686,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "CommentDTO.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Dtos\\CommentDTO.cs",
               "RelativeDocumentMoniker": "Dtos\\CommentDTO.cs",
@@ -699,7 +698,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "LoginDTO.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Dtos\\LoginDTO.cs",
               "RelativeDocumentMoniker": "Dtos\\LoginDTO.cs",
@@ -711,7 +710,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "LoginRequestResponse.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Dtos\\LoginRequestResponse.cs",
               "RelativeDocumentMoniker": "Dtos\\LoginRequestResponse.cs",
@@ -723,7 +722,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "LikesDTO.cs",
               "DocumentMoniker": "C:\\Users\\Javi\\source\\repos\\ProyectoFinal-Angular\u002B.Net\\ApiTFG\\Dtos\\LikesDTO.cs",
               "RelativeDocumentMoniker": "Dtos\\LikesDTO.cs",
