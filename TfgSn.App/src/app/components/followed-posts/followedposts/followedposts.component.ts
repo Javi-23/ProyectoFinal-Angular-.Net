@@ -66,7 +66,7 @@ export class FollowedpostsComponent implements OnInit {
             },
             error: (error) => {
               console.error('Error descargando la imagen de perfil', error);
-              this.profileImages[post.userName] = '../../assets/flags/mifoto.jpg';
+              this.profileImages[post.userName] = '../../../../assets/flags/mifoto.jpg';
               loadedImages++;
               this.checkAllImagesLoaded(totalImagesToLoad, loadedImages);
             },
